@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FootZone | الأخبار</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Tahoma, sans-serif;
+      background: #f4f7f6;
+      color: #111827;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    header {
+      background: #071a12;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: bold;
+      color: #22c55e;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #22c55e;
+    }
+
+    .search {
+      background: #10291e;
+      border: 1px solid #234634;
+      border-radius: 10px;
+      padding: 9px 13px;
+      color: white;
+      outline: none;
+      width: 150px;
+    }
+
+    .search::placeholder {
+      color: #9ca3af;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        linear-gradient(135deg, #052e16, #071a12);
+      color: white;
+      padding: 65px 0;
+    }
+
+    .container {
+      width: 88%;
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #22c55e;
+    }
+
+    .hero p {
+      color: #b7c4bd;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    /* SECTION */
+
+    .section {
+      padding: 50px 0;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .section-title h2 {
+      font-size: 28px;
+    }
+
+    /* FILTERS */
+
+    .filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .filter {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 10px 17px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .filter:hover,
+    .filter.active {
+      background: #22c55e;
+      color: white;
+      border-color: #22c55e;
+    }
+
+    /* NEWS GRID */
+
+    .news {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .news-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    .news-image {
+      height: 190px;
+      background: linear-gradient(135deg, #064e3b, #22c55e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 65px;
+    }
+
+    .news-content {
+      padding: 22px;
+    }
+
+    .tag {
+      display: inline-block;
+      color: #16a34a;
+      background: #ecfdf5;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .news-content h3 {
+      font-size: 19px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .news-content p {
+      color: #6b7280;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .date {
+      display: block;
+      color: #9ca3af;
+      font-size: 12px;
+      margin-top: 15px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #071a12;
+      color: white;
+      margin-top: 30px;
+      padding: 40px 6%;
+      text-align: center;
+    }
+
+    .footer-logo {
+      color: #22c55e;
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      header {
+        flex-wrap: wrap;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .news {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: 92%;
+      }
+
+      .news {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .search {
+        width: 120px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      ⚽ <span>Foot</span>Zone
+    </div>
+
+    <nav>
+
+      <a href="index.html">
+        الرئيسية
+      </a>
+
+      <a href="matches.html">
+        المباريات
+      </a>
+
+      <a href="news.html">
+        الأخبار
+      </a>
+
+      <a href="#">
+        الانتقالات
+      </a>
+
+      <a href="#">
+        الفرق
+      </a>
+
+      <a href="#">
+        اللاعبون
+      </a>
+
+    </nav>
+
+    <input
+      class="search"
+      type="text"
+      placeholder="🔍 بحث..."
+    >
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <h1>
+        📰 أخبار <span>FootZone</span>
+      </h1>
+
+      <p>
+        آخر أخبار كرة القدم، الانتقالات، البطولات واللاعبين.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- NEWS -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          🔥 آخر الأخبار
+        </h2>
+
+      </div>
+
+
+      <!-- FILTERS -->
+
+      <div class="filters">
+
+        <button class="filter active">
+          كل الأخبار
+        </button>
+
+        <button class="filter">
+          ⚽ كرة القدم
+        </button>
+
+        <button class="filter">
+          🔄 انتقالات
+        </button>
+
+        <button class="filter">
+          🏆 بطولات
+        </button>
+
+        <button class="filter">
+          👤 لاعبون
+        </button>
+
+      </div>
+
+
+      <!-- NEWS CARDS -->
+
+      <div class="news">
+
+
+        <article class="news-card">
+
+          <div class="news-image">
+            ⚽
+          </div>
+
+          <div class="news-content">
+
+            <span class="tag">
+              كرة القدم
+            </span>
+
+            <h3>
+              أحدث أخبار كرة القدم العالمية
+            </h3>
+
+            <p>
+              تابع أهم الأحداث والتطورات الجديدة
+              في عالم كرة القدم.
+            </p>
+
+            <span class="date">
+              اليوم
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+          <div class="news-image">
+            🔥
+          </div>
+
+          <div class="news-content">
+
+            <span class="tag">
+              انتقالات
+            </span>
+
+            <h3>
+              آخر أخبار سوق الانتقالات
+            </h3>
+
+            <p>
+              تعرف على أحدث الصفقات والانتقالات
+              بين الأندية.
+            </p>
+
+            <span class="date">
+              اليوم
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+          <div class="news-image">
+            🏆
+          </div>
+
+          <div class="news-content">
+
+            <span class="tag">
+              بطولات
+            </span>
+
+            <h3>
+              أخبار البطولات الأوروبية
+            </h3>
+
+            <p>
+              تابع أخبار أهم الدوريات والبطولات
+              الأوروبية.
+            </p>
+
+            <span class="date">
+              اليوم
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+          <div class="news-image">
+            👤
+          </div>
+
+          <div class="news-content">
+
+            <span class="tag">
+              لاعبون
+            </span>
+
+            <h3>
+              أخبار نجوم كرة القدم
+            </h3>
+
+            <p>
+              آخر الأخبار والتحديثات الخاصة
+              بأشهر اللاعبين.
+            </p>
+
+            <span class="date">
+              اليوم
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+          <div class="news-image">
+            🌍
+          </div>
+
+          <div class="news-content">
+
+            <span class="tag">
+              عالمي
+            </span>
+
+            <h3>
+              كرة القدم حول العالم
+            </h3>
+
+            <p>
+              أهم الأحداث الكروية من مختلف
+              أنحاء العالم.
+            </p>
+
+            <span class="date">
+              اليوم
+            </span>
+
+          </div>
+
+        </article>
+
+
+        <article class="news-card">
+
+          <div class="news-image">
+            🥇
+          </div>
+
+          <div class="news-content">
+
+            <span class="tag">
+              Champions League
+            </span>
+
+            <h3>
+              دوري أبطال أوروبا
+            </h3>
+
+            <p>
+              تابع أخبار ونتائج ومواجهات البطولة
+              الأوروبية الكبرى.
+            </p>
+
+            <span class="date">
+              اليوم
+            </span>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+      ⚽ FootZone
+    </div>
+
+    <p>
+      موقعك لمتابعة عالم كرة القدم
+    </p>
+
+    <p style="margin-top:15px;">
+      © 2026 FootZone — جميع الحقوق محفوظة
+    </p>
+
+  </footer>
+
+
+</body>
+</html>
