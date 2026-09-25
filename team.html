@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>FootZone - Team</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#07111f;
+color:white;
+}
+
+header{
+background:#050b14;
+padding:18px 6%;
+display:flex;
+align-items:center;
+gap:25px;
+flex-wrap:wrap;
+border-bottom:1px solid #17304a;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#00ff88;
+}
+
+nav{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#00ff88;
+}
+
+.search{
+margin-right:auto;
+background:#101d2d;
+border:1px solid #29425d;
+color:white;
+border-radius:25px;
+padding:12px 18px;
+width:250px;
+}
+
+.container{
+width:90%;
+max-width:1000px;
+margin:50px auto;
+}
+
+.teamProfile{
+background:linear-gradient(145deg,#0d1a2a,#102c30);
+border:1px solid #00ff88;
+border-radius:25px;
+padding:40px;
+display:grid;
+grid-template-columns:230px 1fr;
+gap:40px;
+align-items:center;
+}
+
+.logoBig{
+height:230px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#07111f;
+border-radius:20px;
+font-size:100px;
+}
+
+.name{
+font-size:40px;
+margin-bottom:12px;
+}
+
+.country{
+color:#00ff88;
+font-size:20px;
+margin-bottom:25px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.stat{
+background:#07111f;
+border:1px solid #19334a;
+padding:18px;
+border-radius:14px;
+}
+
+.stat span{
+display:block;
+color:#8193a7;
+margin-bottom:8px;
+}
+
+.stat strong{
+font-size:19px;
+}
+
+.back{
+display:inline-block;
+margin-top:25px;
+background:#00ff88;
+color:#03110a;
+padding:12px 22px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+padding:35px;
+background:#050b14;
+margin-top:50px;
+color:#8293a5;
+}
+
+@media(max-width:700px){
+
+.teamProfile{
+grid-template-columns:1fr;
+padding:25px;
+}
+
+.name{
+font-size:31px;
+}
+
+.stats{
+grid-template-columns:1fr;
+}
+
+.search{
+width:100%;
+margin:0;
+}
+
+nav{
+width:100%;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">⚽ FootZone</div>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="matches.html">المباريات</a>
+<a href="news.html">الأخبار</a>
+<a href="transfers.html">الانتقالات</a>
+<a href="teams.html">الفرق</a>
+<a href="players.html">اللاعبون</a>
+</nav>
+
+<input class="search" placeholder="🔎 ابحث...">
+
+</header>
+
+<div class="container">
+
+<div id="team"></div>
+
+</div>
+
+<footer>
+© 2026 FootZone
+</footer>
+
+<script>
+
+const teams = {
+
+barcelona:{
+name:"Barcelona",
+country:"🇪🇸 Spain",
+league:"La Liga",
+stadium:"Spotify Camp Nou",
+icon:"🔵🔴"
+},
+
+realmadrid:{
+name:"Real Madrid",
+country:"🇪🇸 Spain",
+league:"La Liga",
+stadium:"Santiago Bernabéu",
+icon:"⚪"
+},
+
+atletico:{
+name:"Atlético Madrid",
+country:"🇪🇸 Spain",
+league:"La Liga",
+stadium:"Metropolitano",
+icon:"🔴⚪"
+},
+
+mancity:{
+name:"Manchester City",
+country:"🏴 England",
+league:"Premier League",
+stadium:"Etihad Stadium",
+icon:"🔵"
+},
+
+manunited:{
+name:"Manchester United",
+country:"🏴 England",
+league:"Premier League",
+stadium:"Old Trafford",
+icon:"🔴"
+},
+
+liverpool:{
+name:"Liverpool",
+country:"🏴 England",
+league:"Premier League",
+stadium:"Anfield",
+icon:"🔴"
+},
+
+chelsea:{
+name:"Chelsea",
+country:"🏴 England",
+league:"Premier League",
+stadium:"Stamford Bridge",
+icon:"🔵"
+},
+
+arsenal:{
+name:"Arsenal",
+country:"🏴 England",
+league:"Premier League",
+stadium:"Emirates Stadium",
+icon:"🔴"
+},
+
+psg:{
+name:"PSG",
+country:"🇫🇷 France",
+league:"Ligue 1",
+stadium:"Parc des Princes",
+icon:"🔵🔴"
+},
+
+marseille:{
+name:"Marseille",
+country:"🇫🇷 France",
+league:"Ligue 1",
+stadium:"Vélodrome",
+icon:"⚪🔵"
+},
+
+inter:{
+name:"Inter",
+country:"🇮🇹 Italy",
+league:"Serie A",
+stadium:"San Siro",
+icon:"🔵⚫"
+},
+
+milan:{
+name:"AC Milan",
+country:"🇮🇹 Italy",
+league:"Serie A",
+stadium:"San Siro",
+icon:"🔴⚫"
+},
+
+juventus:{
+name:"Juventus",
+country:"🇮🇹 Italy",
+league:"Serie A",
+stadium:"Allianz Stadium",
+icon:"⚫⚪"
+},
+
+bayern:{
+name:"Bayern Munich",
+country:"🇩🇪 Germany",
+league:"Bundesliga",
+stadium:"Allianz Arena",
+icon:"🔴⚪"
+},
+
+dortmund:{
+name:"Dortmund",
+country:"🇩🇪 Germany",
+league:"Bundesliga",
+stadium:"Signal Iduna Park",
+icon:"🟡⚫"
+},
+
+esperance:{
+name:"Espérance de Tunis",
+country:"🇹🇳 Tunisia",
+league:"Tunisian League",
+stadium:"Stade de Radès",
+icon:"🔴🟡"
+},
+
+clubafricain:{
+name:"Club Africain",
+country:"🇹🇳 Tunisia",
+league:"Tunisian League",
+stadium:"Stade de Radès",
+icon:"🔴⚪"
+},
+
+etoile:{
+name:"Étoile du Sahel",
+country:"🇹🇳 Tunisia",
+league:"Tunisian League",
+stadium:"Stade Olympique de Sousse",
+icon:"⭐🔴"
+},
+
+sfaxien:{
+name:"CS Sfaxien",
+country:"🇹🇳 Tunisia",
+league:"Tunisian League",
+stadium:"Stade Taïeb Mhiri",
+icon:"⚫⚪"
+}
+
+};
+
+const params =
+new URLSearchParams(window.location.search);
+
+const id =
+params.get("team") || "barcelona";
+
+const team =
+teams[id];
+
+const box =
+document.getElementById("team");
+
+if(team){
+
+box.innerHTML = `
+
+<div class="teamProfile">
+
+<div class="logoBig">
+${team.icon}
+</div>
+
+<div>
+
+<h1 class="name">
+${team.name}
+</h1>
+
+<div class="country">
+${team.country}
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<span>البطولة</span>
+<strong>${team.league}</strong>
+</div>
+
+<div class="stat">
+<span>الملعب</span>
+<strong>${team.stadium}</strong>
+</div>
+
+</div>
+
+<a class="back" href="teams.html">
+← العودة للفرق
+</a>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+</script>
+
+<script src="search.js"></script>
+
+</body>
+</html>
