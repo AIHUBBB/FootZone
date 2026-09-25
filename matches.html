@@ -2,45 +2,38 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FootZone | المباريات</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FootZone - المباريات</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0b1020;color:white}
-a{text-decoration:none;color:inherit}
-header{background:#11182d;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:1000;border-bottom:1px solid #26304d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;background:#07111f;color:#fff}
+header{background:#050b14;padding:18px 6%;display:flex;align-items:center;gap:25px;flex-wrap:wrap;border-bottom:1px solid #17304a}
 .logo{font-size:28px;font-weight:bold;color:#00ff88}
-nav{display:flex;gap:20px;flex-wrap:wrap}
-nav a{color:#ddd}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#ddd;text-decoration:none;font-weight:bold}
 nav a:hover{color:#00ff88}
-.search{background:#18213b;border:1px solid #2c3758;color:white;padding:10px 15px;border-radius:10px;outline:none;width:180px}
-.hero{padding:70px 20px;text-align:center;background:radial-gradient(circle,#17345c,#0b1020 70%)}
-.hero h1{font-size:45px;margin-bottom:15px}
-.hero p{color:#aaa}
-section{padding:50px 6%}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:35px}
-.filter{background:#18213b;border:1px solid #2c3758;color:white;padding:10px 18px;border-radius:25px}
-.filter:hover,.active{background:#00ff88;color:#07130d}
-.matches{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.match{background:#11182d;border:1px solid #26304d;border-radius:18px;padding:25px;text-align:center}
+.search{margin-right:auto;background:#101d2d;border:1px solid #29425d;color:#fff;border-radius:25px;padding:12px 18px;width:230px;outline:none}
+.container{width:90%;max-width:1200px;margin:40px auto}
+.title{font-size:32px;margin-bottom:25px;border-right:4px solid #00ff88;padding-right:12px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+.filter{background:#102238;color:#fff;border:1px solid #29425d;padding:10px 18px;border-radius:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.match{background:#0d1a2a;border:1px solid #1d344b;border-radius:16px;padding:25px;text-align:center}
 .match:hover{border-color:#00ff88}
-.teams{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.team{font-size:18px;font-weight:bold}
-.vs{color:#00ff88;font-weight:bold}
-.time{font-size:25px;color:#00ff88;margin:20px}
-.status{color:#777}
-footer{background:#070b16;padding:35px 6%;text-align:center;color:#888;border-top:1px solid #26304d}
-@media(max-width:900px){.matches{grid-template-columns:1fr 1fr}header{flex-direction:column}.search{width:100%}}
-@media(max-width:600px){.matches{grid-template-columns:1fr}.hero h1{font-size:35px}nav{justify-content:center}}
+.league{color:#00ff88;margin-bottom:15px}
+.teams{font-size:20px;font-weight:bold;margin:15px 0}
+.time{font-size:26px;margin:12px;color:#00ff88}
+.status{color:#aebdca}
+footer{text-align:center;padding:35px;background:#050b14;margin-top:50px;color:#8293a5}
+@media(max-width:700px){.search{width:100%;margin:0}nav{width:100%}}
 </style>
 </head>
 
 <body>
 
 <header>
-
-<a href="index.html" class="logo">⚽ FootZone</a>
+<div class="logo">⚽ FootZone</div>
 
 <nav>
 <a href="index.html">الرئيسية</a>
@@ -51,100 +44,69 @@ footer{background:#070b16;padding:35px 6%;text-align:center;color:#888;border-to
 <a href="players.html">اللاعبون</a>
 </nav>
 
-<input class="search" type="text" placeholder="🔎 ابحث...">
-
+<input class="search" placeholder="🔎 ابحث...">
 </header>
 
-<section class="hero">
-<h1>⚽ مباريات كرة القدم</h1>
-<p>تابع أهم المباريات والنتائج</p>
-</section>
+<div class="container">
 
-<section>
+<h1 class="title">⚽ المباريات</h1>
 
 <div class="filters">
-<button class="filter active">كل المباريات</button>
+<button class="filter">الكل</button>
 <button class="filter">اليوم</button>
 <button class="filter">غداً</button>
-<button class="filter">أمس</button>
-<button class="filter">🇪🇸 إسبانيا</button>
-<button class="filter">🏴 إنجلترا</button>
-<button class="filter">🇫🇷 فرنسا</button>
+<button class="filter">أوروبا</button>
 </div>
 
-<div class="matches">
+<div class="grid">
 
 <div class="match">
-<div class="teams">
-<span class="team">Barcelona</span>
-<span class="vs">VS</span>
-<span class="team">Real Madrid</span>
-</div>
+<div class="league">🇪🇸 La Liga</div>
+<div class="teams">Barcelona 🆚 Real Madrid</div>
 <div class="time">20:00</div>
-<div class="status">● لم تبدأ</div>
+<div class="status">لم تبدأ</div>
 </div>
 
 <div class="match">
-<div class="teams">
-<span class="team">PSG</span>
-<span class="vs">VS</span>
-<span class="team">Marseille</span>
-</div>
+<div class="league">🇫🇷 Ligue 1</div>
+<div class="teams">PSG 🆚 Marseille</div>
 <div class="time">21:00</div>
-<div class="status">● لم تبدأ</div>
+<div class="status">لم تبدأ</div>
 </div>
 
 <div class="match">
-<div class="teams">
-<span class="team">Man City</span>
-<span class="vs">VS</span>
-<span class="team">Arsenal</span>
-</div>
+<div class="league">🏴 Premier League</div>
+<div class="teams">Manchester City 🆚 Arsenal</div>
 <div class="time">18:30</div>
-<div class="status">● لم تبدأ</div>
+<div class="status">لم تبدأ</div>
 </div>
 
 <div class="match">
-<div class="teams">
-<span class="team">Inter</span>
-<span class="vs">VS</span>
-<span class="team">Milan</span>
-</div>
+<div class="league">🇮🇹 Serie A</div>
+<div class="teams">Inter 🆚 AC Milan</div>
 <div class="time">19:45</div>
-<div class="status">● لم تبدأ</div>
+<div class="status">لم تبدأ</div>
 </div>
 
 <div class="match">
-<div class="teams">
-<span class="team">Bayern</span>
-<span class="vs">VS</span>
-<span class="team">Dortmund</span>
-</div>
+<div class="league">🇩🇪 Bundesliga</div>
+<div class="teams">Bayern Munich 🆚 Dortmund</div>
 <div class="time">20:30</div>
-<div class="status">● لم تبدأ</div>
+<div class="status">لم تبدأ</div>
 </div>
 
 <div class="match">
-<div class="teams">
-<span class="team">Chelsea</span>
-<span class="vs">VS</span>
-<span class="team">Liverpool</span>
-</div>
+<div class="league">🏴 Premier League</div>
+<div class="teams">Chelsea 🆚 Liverpool</div>
 <div class="time">21:00</div>
-<div class="status">● لم تبدأ</div>
+<div class="status">لم تبدأ</div>
 </div>
 
 </div>
+</div>
 
-</section>
-
-<footer>
-<div class="logo">⚽ FootZone</div>
-<p>جميع أخبار كرة القدم في مكان واحد.</p>
-<p style="margin-top:15px">© 2026 FootZone</p>
-</footer>
+<footer>© 2026 FootZone</footer>
 
 <script src="search.js"></script>
-
 </body>
 </html>
