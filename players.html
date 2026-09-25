@@ -1,693 +1,208 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FootZone | اللاعبون</title>
 
-    <title>FootZone | اللاعبون</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #0b1020;
-            color: white;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        header {
-            background: #11182d;
-            padding: 18px 6%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #26304d;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #00ff88;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #ddd;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #00ff88;
-        }
-
-        .search {
-            background: #18213b;
-            border: 1px solid #2c3758;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
-            outline: none;
-            width: 180px;
-        }
-
-        .hero {
-            padding: 80px 20px;
-            text-align: center;
-            background:
-                linear-gradient(rgba(5,10,25,.7), rgba(5,10,25,.95)),
-                radial-gradient(circle, #17345c, #0b1020 70%);
-        }
-
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
-            color: #00ff88;
-        }
-
-        .hero p {
-            color: #aaa;
-            font-size: 18px;
-        }
-
-        section {
-            padding: 60px 6%;
-        }
-
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .section-title h2 {
-            font-size: 30px;
-        }
-
-        .section-title a {
-            color: #00ff88;
-        }
-
-        .filters {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-
-        .filter {
-            background: #18213b;
-            border: 1px solid #2c3758;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 25px;
-            cursor: pointer;
-        }
-
-        .filter.active,
-        .filter:hover {
-            background: #00ff88;
-            color: #07130d;
-        }
-
-        .players-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .player-card {
-            background: #11182d;
-            border: 1px solid #26304d;
-            border-radius: 18px;
-            padding: 25px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .player-card:hover {
-            transform: translateY(-7px);
-            border-color: #00ff88;
-        }
-
-        .player-photo {
-            width: 110px;
-            height: 110px;
-            margin: 0 auto 18px;
-            border-radius: 50%;
-            background: #18213b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 55px;
-            border: 3px solid #26304d;
-        }
-
-        .player-card h3 {
-            font-size: 21px;
-            margin-bottom: 8px;
-        }
-
-        .player-card .position {
-            color: #00ff88;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .player-card .club {
-            color: #aaa;
-            font-size: 14px;
-        }
-
-        .player-info {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #26304d;
-            color: #888;
-            font-size: 13px;
-        }
-
-        .featured {
-            background: #0e1528;
-        }
-
-        .featured-box {
-            background: linear-gradient(135deg, #11182d, #162541);
-            border: 1px solid #26304d;
-            border-radius: 20px;
-            padding: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .featured-player {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .featured-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: #18213b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 60px;
-        }
-
-        .featured-text h2 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .featured-text p {
-            color: #aaa;
-            line-height: 1.7;
-        }
-
-        .stats {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: center;
-            background: #0b1020;
-            padding: 18px 25px;
-            border-radius: 12px;
-            min-width: 100px;
-        }
-
-        .stat strong {
-            display: block;
-            color: #00ff88;
-            font-size: 25px;
-            margin-bottom: 5px;
-        }
-
-        .stat span {
-            color: #888;
-            font-size: 13px;
-        }
-
-        footer {
-            background: #070b16;
-            padding: 35px 6%;
-            text-align: center;
-            color: #888;
-            border-top: 1px solid #26304d;
-        }
-
-        footer .logo {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 1000px) {
-            .players-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            header {
-                flex-direction: column;
-            }
-
-            .search {
-                width: 100%;
-            }
-
-            .featured-box {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            nav {
-                justify-content: center;
-            }
-
-            .players-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-start;
-            }
-
-            .featured-player {
-                flex-direction: column;
-            }
-
-            .stats {
-                justify-content: center;
-            }
-        }
-    </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0b1020;color:white}
+a{text-decoration:none;color:inherit}
+header{background:#11182d;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:1000;border-bottom:1px solid #26304d}
+.logo{font-size:28px;font-weight:bold;color:#00ff88}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:#ddd}
+nav a:hover{color:#00ff88}
+.search{background:#18213b;border:1px solid #2c3758;color:white;padding:10px 15px;border-radius:10px;outline:none;width:180px}
+.hero{padding:70px 20px;text-align:center;background:radial-gradient(circle,#17345c,#0b1020 70%)}
+.hero h1{font-size:45px;margin-bottom:15px}
+.hero h1 span{color:#00ff88}
+.hero p{color:#aaa}
+section{padding:50px 6%}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.filter{background:#18213b;border:1px solid #2c3758;color:white;padding:10px 18px;border-radius:25px}
+.filter:hover,.active{background:#00ff88;color:#07130d}
+.players{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.player{background:#11182d;border:1px solid #26304d;border-radius:18px;padding:25px;text-align:center;transition:.3s}
+.player:hover{transform:translateY(-6px);border-color:#00ff88}
+.photo{width:110px;height:110px;border-radius:50%;background:#18213b;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:55px;border:3px solid #26304d}
+.player h3{font-size:21px;margin-bottom:8px}
+.position{color:#00ff88;font-weight:bold;margin-bottom:8px}
+.club{color:#aaa}
+.info{display:flex;justify-content:space-between;margin-top:20px;padding-top:15px;border-top:1px solid #26304d;color:#888;font-size:13px}
+.featured{background:#0e1528}
+.featured-box{background:linear-gradient(135deg,#11182d,#162541);border:1px solid #26304d;border-radius:20px;padding:35px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.featured-player{display:flex;align-items:center;gap:25px}
+.big-photo{width:120px;height:120px;border-radius:50%;background:#18213b;display:flex;align-items:center;justify-content:center;font-size:60px}
+.featured h2{font-size:30px;margin-bottom:10px}
+.featured p{color:#aaa;line-height:1.7}
+.stats{display:flex;gap:15px;flex-wrap:wrap}
+.stat{text-align:center;background:#0b1020;padding:18px 25px;border-radius:12px}
+.stat strong{display:block;color:#00ff88;font-size:25px}
+.stat span{color:#888;font-size:13px}
+footer{background:#070b16;padding:35px 6%;text-align:center;color:#888;border-top:1px solid #26304d}
+@media(max-width:1000px){.players{grid-template-columns:repeat(2,1fr)}header{flex-direction:column}.search{width:100%}.featured-box{flex-direction:column;text-align:center}}
+@media(max-width:600px){.players{grid-template-columns:1fr}.hero h1{font-size:35px}nav{justify-content:center}.featured-player{flex-direction:column}}
+</style>
 </head>
 
 <body>
 
 <header>
 
-    <a href="index.html" class="logo">
-        ⚽ FootZone
-    </a>
+<a href="index.html" class="logo">⚽ FootZone</a>
 
-    <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="matches.html">المباريات</a>
-        <a href="news.html">الأخبار</a>
-        <a href="transfers.html">الانتقالات</a>
-        <a href="teams.html">الفرق</a>
-        <a href="players.html">اللاعبون</a>
-    </nav>
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="matches.html">المباريات</a>
+<a href="news.html">الأخبار</a>
+<a href="transfers.html">الانتقالات</a>
+<a href="teams.html">الفرق</a>
+<a href="players.html">اللاعبون</a>
+</nav>
 
-    <input
-        class="search"
-        type="text"
-        placeholder="🔎 ابحث عن لاعب..."
-    >
+<input class="search" type="text" placeholder="🔎 ابحث عن لاعب...">
 
 </header>
 
-
 <section class="hero">
 
-    <h1>
-        👤 <span>نجوم كرة القدم</span>
-    </h1>
-
-    <p>
-        اكتشف أشهر اللاعبين ونجوم كرة القدم حول العالم.
-    </p>
+<h1>👤 <span>نجوم كرة القدم</span></h1>
+<p>اكتشف أشهر اللاعبين حول العالم</p>
 
 </section>
-
 
 <section>
 
-    <div class="section-title">
-
-        <h2>⭐ اللاعبون</h2>
-
-        <a href="index.html">
-            ← الرئيسية
-        </a>
-
-    </div>
-
-
-    <div class="filters">
-
-        <button class="filter active">
-            الكل
-        </button>
-
-        <button class="filter">
-            مهاجمون
-        </button>
-
-        <button class="filter">
-            أجنحة
-        </button>
-
-        <button class="filter">
-            وسط
-        </button>
-
-        <button class="filter">
-            مدافعون
-        </button>
-
-        <button class="filter">
-            حراس
-        </button>
-
-    </div>
-
-
-    <div class="players-grid">
-
-
-        <div class="player-card">
-
-            <div class="player-photo">
-                👑
-            </div>
-
-            <h3>
-                Lionel Messi
-            </h3>
-
-            <div class="position">
-                جناح / مهاجم
-            </div>
-
-            <div class="club">
-                Inter Miami
-            </div>
-
-            <div class="player-info">
-                <span>🇦🇷 الأرجنتين</span>
-                <span>رقم 10</span>
-            </div>
-
-        </div>
-
-
-        <div class="player-card">
-
-            <div class="player-photo">
-                ⚡
-            </div>
-
-            <h3>
-                Kylian Mbappé
-            </h3>
-
-            <div class="position">
-                مهاجم
-            </div>
-
-            <div class="club">
-                Real Madrid
-            </div>
-
-            <div class="player-info">
-                <span>🇫🇷 فرنسا</span>
-                <span>رقم 9</span>
-            </div>
-
-        </div>
-
-
-        <div class="player-card">
-
-            <div class="player-photo">
-                ⭐
-            </div>
-
-            <h3>
-                Lamine Yamal
-            </h3>
-
-            <div class="position">
-                جناح
-            </div>
-
-            <div class="club">
-                Barcelona
-            </div>
-
-            <div class="player-info">
-                <span>🇪🇸 إسبانيا</span>
-                <span>رقم 10</span>
-            </div>
-
-        </div>
-
-
-        <div class="player-card">
-
-            <div class="player-photo">
-                🔥
-            </div>
-
-            <h3>
-                Erling Haaland
-            </h3>
-
-            <div class="position">
-                مهاجم
-            </div>
-
-            <div class="club">
-                Manchester City
-            </div>
-
-            <div class="player-info">
-                <span>🇳🇴 النرويج</span>
-                <span>رقم 9</span>
-            </div>
-
-        </div>
-
-
-        <div class="player-card">
-
-            <div class="player-photo">
-                🎯
-            </div>
-
-            <h3>
-                Mohamed Salah
-            </h3>
-
-            <div class="position">
-                جناح
-            </div>
-
-            <div class="club">
-                Liverpool
-            </div>
-
-            <div class="player-info">
-                <span>🇪🇬 مصر</span>
-                <span>رقم 11</span>
-            </div>
-
-        </div>
-
-
-        <div class="player-card">
-
-            <div class="player-photo">
-                🧠
-            </div>
-
-            <h3>
-                Kevin De Bruyne
-            </h3>
-
-            <div class="position">
-                وسط
-            </div>
-
-            <div class="club">
-                Napoli
-            </div>
-
-            <div class="player-info">
-                <span>🇧🇪 بلجيكا</span>
-                <span>وسط</span>
-            </div>
-
-        </div>
-
-
-        <div class="player-card">
-
-            <div class="player-photo">
-                💪
-            </div>
-
-            <h3>
-                Vinícius Júnior
-            </h3>
-
-            <div class="position">
-                جناح
-            </div>
-
-            <div class="club">
-                Real Madrid
-            </div>
-
-            <div class="player-info">
-                <span>🇧🇷 البرازيل</span>
-                <span>رقم 7</span>
-            </div>
-
-        </div>
-
-
-        <div class="player-card">
-
-            <div class="player-photo">
-                🧤
-            </div>
-
-            <h3>
-                Thibaut Courtois
-            </h3>
-
-            <div class="position">
-                حارس مرمى
-            </div>
-
-            <div class="club">
-                Real Madrid
-            </div>
-
-            <div class="player-info">
-                <span>🇧🇪 بلجيكا</span>
-                <span>حارس</span>
-            </div>
-
-        </div>
-
-
-    </div>
+<div class="filters">
+
+<button class="filter active">الكل</button>
+<button class="filter">مهاجمون</button>
+<button class="filter">أجنحة</button>
+<button class="filter">وسط</button>
+<button class="filter">مدافعون</button>
+<button class="filter">حراس</button>
+
+</div>
+
+<div class="players">
+
+<div class="player">
+<div class="photo">👑</div>
+<h3>Lionel Messi</h3>
+<div class="position">جناح / مهاجم</div>
+<div class="club">Inter Miami</div>
+<div class="info"><span>🇦🇷 الأرجنتين</span><span>10</span></div>
+</div>
+
+<div class="player">
+<div class="photo">⚡</div>
+<h3>Kylian Mbappé</h3>
+<div class="position">مهاجم</div>
+<div class="club">Real Madrid</div>
+<div class="info"><span>🇫🇷 فرنسا</span><span>9</span></div>
+</div>
+
+<div class="player">
+<div class="photo">⭐</div>
+<h3>Lamine Yamal</h3>
+<div class="position">جناح</div>
+<div class="club">Barcelona</div>
+<div class="info"><span>🇪🇸 إسبانيا</span><span>10</span></div>
+</div>
+
+<div class="player">
+<div class="photo">🔥</div>
+<h3>Erling Haaland</h3>
+<div class="position">مهاجم</div>
+<div class="club">Manchester City</div>
+<div class="info"><span>🇳🇴 النرويج</span><span>9</span></div>
+</div>
+
+<div class="player">
+<div class="photo">🎯</div>
+<h3>Mohamed Salah</h3>
+<div class="position">جناح</div>
+<div class="club">Liverpool</div>
+<div class="info"><span>🇪🇬 مصر</span><span>11</span></div>
+</div>
+
+<div class="player">
+<div class="photo">🧠</div>
+<h3>Kevin De Bruyne</h3>
+<div class="position">وسط</div>
+<div class="club">Napoli</div>
+<div class="info"><span>🇧🇪 بلجيكا</span><span>وسط</span></div>
+</div>
+
+<div class="player">
+<div class="photo">💪</div>
+<h3>Vinícius Júnior</h3>
+<div class="position">جناح</div>
+<div class="club">Real Madrid</div>
+<div class="info"><span>🇧🇷 البرازيل</span><span>7</span></div>
+</div>
+
+<div class="player">
+<div class="photo">🧤</div>
+<h3>Thibaut Courtois</h3>
+<div class="position">حارس مرمى</div>
+<div class="club">Real Madrid</div>
+<div class="info"><span>🇧🇪 بلجيكا</span><span>حارس</span></div>
+</div>
+
+</div>
 
 </section>
-
 
 <section class="featured">
 
-    <div class="section-title">
+<div class="featured-box">
 
-        <h2>🌟 نجم الأسبوع</h2>
+<div class="featured-player">
 
-    </div>
+<div class="big-photo">⭐</div>
 
+<div>
+<h2>Lamine Yamal</h2>
+<p>جناح هجومي مع Barcelona وأحد اللاعبين الشباب البارزين.</p>
+</div>
 
-    <div class="featured-box">
+</div>
 
-        <div class="featured-player">
+<div class="stats">
 
-            <div class="featured-photo">
-                ⭐
-            </div>
+<div class="stat">
+<strong>10</strong>
+<span>الرقم</span>
+</div>
 
-            <div class="featured-text">
+<div class="stat">
+<strong>⚽</strong>
+<span>هداف</span>
+</div>
 
-                <h2>
-                    Lamine Yamal
-                </h2>
+<div class="stat">
+<strong>🇪🇸</strong>
+<span>إسبانيا</span>
+</div>
 
-                <p>
-                    جناح هجومي مع Barcelona وإحدى المواهب
-                    الشابة البارزة في كرة القدم.
-                </p>
+</div>
 
-            </div>
-
-        </div>
-
-
-        <div class="stats">
-
-            <div class="stat">
-                <strong>10</strong>
-                <span>الرقم</span>
-            </div>
-
-            <div class="stat">
-                <strong>⚽</strong>
-                <span>هداف</span>
-            </div>
-
-            <div class="stat">
-                <strong>🇪🇸</strong>
-                <span>إسبانيا</span>
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
-
 <footer>
 
-    <div class="logo">
-        ⚽ FootZone
-    </div>
-
-    <p>
-        جميع أخبار كرة القدم في مكان واحد.
-    </p>
-
-    <p style="margin-top:15px;">
-        © 2026 FootZone
-    </p>
+<div class="logo">⚽ FootZone</div>
+<p>جميع أخبار كرة القدم في مكان واحد.</p>
+<p style="margin-top:15px">© 2026 FootZone</p>
 
 </footer>
+
+<script src="search.js"></script>
 
 </body>
 </html>
