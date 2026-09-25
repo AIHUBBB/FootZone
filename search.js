@@ -1,395 +1,367 @@
 const FOOTZONE_DATA = [
 
-    // PLAYERS
+{
+name:"Lionel Messi",
+type:"👤 لاعب",
+description:"🇦🇷 Argentina — Inter Miami — رقم 10",
+page:"player.html?player=messi"
+},
 
-    {
-        name: "Lionel Messi",
-        type: "👤 لاعب",
-        description: "🇦🇷 الأرجنتين — Inter Miami — الرقم 10",
-        page: "players.html"
-    },
+{
+name:"Kylian Mbappé",
+type:"👤 لاعب",
+description:"🇫🇷 France — Real Madrid — رقم 9",
+page:"player.html?player=mbappe"
+},
 
-    {
-        name: "Kylian Mbappé",
-        type: "👤 لاعب",
-        description: "🇫🇷 فرنسا — Real Madrid — الرقم 9",
-        page: "players.html"
-    },
+{
+name:"Lamine Yamal",
+type:"👤 لاعب",
+description:"🇪🇸 Spain — Barcelona — رقم 10",
+page:"player.html?player=yamal"
+},
 
-    {
-        name: "Lamine Yamal",
-        type: "👤 لاعب",
-        description: "🇪🇸 إسبانيا — Barcelona — الرقم 10",
-        page: "players.html"
-    },
+{
+name:"Erling Haaland",
+type:"👤 لاعب",
+description:"🇳🇴 Norway — Manchester City",
+page:"player.html?player=haaland"
+},
 
-    {
-        name: "Erling Haaland",
-        type: "👤 لاعب",
-        description: "🇳🇴 النرويج — Manchester City — الرقم 9",
-        page: "players.html"
-    },
+{
+name:"Mohamed Salah",
+type:"👤 لاعب",
+description:"🇪🇬 Egypt — Liverpool",
+page:"player.html?player=salah"
+},
 
-    {
-        name: "Mohamed Salah",
-        type: "👤 لاعب",
-        description: "🇪🇬 مصر — Liverpool — الرقم 11",
-        page: "players.html"
-    },
+{
+name:"Kevin De Bruyne",
+type:"👤 لاعب",
+description:"🇧🇪 Belgium — Napoli",
+page:"player.html?player=debruyne"
+},
 
-    {
-        name: "Kevin De Bruyne",
-        type: "👤 لاعب",
-        description: "🇧🇪 بلجيكا — Napoli",
-        page: "players.html"
-    },
+{
+name:"Vinícius Júnior",
+type:"👤 لاعب",
+description:"🇧🇷 Brazil — Real Madrid",
+page:"player.html?player=vinicius"
+},
 
-    {
-        name: "Vinícius Júnior",
-        type: "👤 لاعب",
-        description: "🇧🇷 البرازيل — Real Madrid — الرقم 7",
-        page: "players.html"
-    },
+{
+name:"Thibaut Courtois",
+type:"👤 لاعب",
+description:"🇧🇪 Belgium — Real Madrid",
+page:"player.html?player=courtois"
+},
 
-    {
-        name: "Thibaut Courtois",
-        type: "👤 لاعب",
-        description: "🇧🇪 بلجيكا — Real Madrid — الرقم 1",
-        page: "players.html"
-    },
+{
+name:"Barcelona",
+type:"🏆 فريق",
+description:"🇪🇸 Spain — La Liga",
+page:"team.html?team=barcelona"
+},
 
-    // TEAMS
+{
+name:"Real Madrid",
+type:"🏆 فريق",
+description:"🇪🇸 Spain — La Liga",
+page:"team.html?team=realmadrid"
+},
 
-    {
-        name: "Barcelona",
-        type: "🏆 فريق",
-        description: "🇪🇸 إسبانيا",
-        page: "teams.html"
-    },
+{
+name:"Manchester City",
+type:"🏆 فريق",
+description:"🏴 England — Premier League",
+page:"team.html?team=mancity"
+},
 
-    {
-        name: "Real Madrid",
-        type: "🏆 فريق",
-        description: "🇪🇸 إسبانيا",
-        page: "teams.html"
-    },
+{
+name:"Manchester United",
+type:"🏆 فريق",
+description:"🏴 England — Premier League",
+page:"team.html?team=manunited"
+},
 
-    {
-        name: "Manchester City",
-        type: "🏆 فريق",
-        description: "🏴 إنجلترا",
-        page: "teams.html"
-    },
+{
+name:"Liverpool",
+type:"🏆 فريق",
+description:"🏴 England — Premier League",
+page:"team.html?team=liverpool"
+},
 
-    {
-        name: "Manchester United",
-        type: "🏆 فريق",
-        description: "🏴 إنجلترا",
-        page: "teams.html"
-    },
+{
+name:"Chelsea",
+type:"🏆 فريق",
+description:"🏴 England — Premier League",
+page:"team.html?team=chelsea"
+},
 
-    {
-        name: "Liverpool",
-        type: "🏆 فريق",
-        description: "🏴 إنجلترا",
-        page: "teams.html"
-    },
+{
+name:"Arsenal",
+type:"🏆 فريق",
+description:"🏴 England — Premier League",
+page:"team.html?team=arsenal"
+},
 
-    {
-        name: "Chelsea",
-        type: "🏆 فريق",
-        description: "🏴 إنجلترا",
-        page: "teams.html"
-    },
+{
+name:"PSG",
+type:"🏆 فريق",
+description:"🇫🇷 France — Ligue 1",
+page:"team.html?team=psg"
+},
 
-    {
-        name: "Arsenal",
-        type: "🏆 فريق",
-        description: "🏴 إنجلترا",
-        page: "teams.html"
-    },
+{
+name:"Marseille",
+type:"🏆 فريق",
+description:"🇫🇷 France — Ligue 1",
+page:"team.html?team=marseille"
+},
 
-    {
-        name: "PSG",
-        type: "🏆 فريق",
-        description: "🇫🇷 فرنسا",
-        page: "teams.html"
-    },
+{
+name:"Inter",
+type:"🏆 فريق",
+description:"🇮🇹 Italy — Serie A",
+page:"team.html?team=inter"
+},
 
-    {
-        name: "Marseille",
-        type: "🏆 فريق",
-        description: "🇫🇷 فرنسا",
-        page: "teams.html"
-    },
+{
+name:"AC Milan",
+type:"🏆 فريق",
+description:"🇮🇹 Italy — Serie A",
+page:"team.html?team=milan"
+},
 
-    {
-        name: "Inter",
-        type: "🏆 فريق",
-        description: "🇮🇹 إيطاليا",
-        page: "teams.html"
-    },
+{
+name:"Juventus",
+type:"🏆 فريق",
+description:"🇮🇹 Italy — Serie A",
+page:"team.html?team=juventus"
+},
 
-    {
-        name: "AC Milan",
-        type: "🏆 فريق",
-        description: "🇮🇹 إيطاليا",
-        page: "teams.html"
-    },
+{
+name:"Bayern Munich",
+type:"🏆 فريق",
+description:"🇩🇪 Germany — Bundesliga",
+page:"team.html?team=bayern"
+},
 
-    {
-        name: "Juventus",
-        type: "🏆 فريق",
-        description: "🇮🇹 إيطاليا",
-        page: "teams.html"
-    },
+{
+name:"Dortmund",
+type:"🏆 فريق",
+description:"🇩🇪 Germany — Bundesliga",
+page:"team.html?team=dortmund"
+},
 
-    {
-        name: "Bayern Munich",
-        type: "🏆 فريق",
-        description: "🇩🇪 ألمانيا",
-        page: "teams.html"
-    },
+{
+name:"Espérance de Tunis",
+type:"🏆 فريق",
+description:"🇹🇳 Tunisia",
+page:"team.html?team=esperance"
+},
 
-    {
-        name: "Dortmund",
-        type: "🏆 فريق",
-        description: "🇩🇪 ألمانيا",
-        page: "teams.html"
-    },
+{
+name:"Club Africain",
+type:"🏆 فريق",
+description:"🇹🇳 Tunisia",
+page:"team.html?team=clubafricain"
+},
 
-    {
-        name: "Espérance de Tunis",
-        type: "🏆 فريق",
-        description: "🇹🇳 تونس",
-        page: "teams.html"
-    },
+{
+name:"Étoile du Sahel",
+type:"🏆 فريق",
+description:"🇹🇳 Tunisia",
+page:"team.html?team=etoile"
+},
 
-    {
-        name: "Club Africain",
-        type: "🏆 فريق",
-        description: "🇹🇳 تونس",
-        page: "teams.html"
-    },
+{
+name:"CS Sfaxien",
+type:"🏆 فريق",
+description:"🇹🇳 Tunisia",
+page:"team.html?team=sfaxien"
+},
 
-    {
-        name: "Étoile du Sahel",
-        type: "🏆 فريق",
-        description: "🇹🇳 تونس",
-        page: "teams.html"
-    },
+{
+name:"Barcelona Real Madrid",
+type:"⚽ مباراة",
+description:"Barcelona 🆚 Real Madrid",
+page:"matches.html"
+},
 
-    {
-        name: "CS Sfaxien",
-        type: "🏆 فريق",
-        description: "🇹🇳 تونس",
-        page: "teams.html"
-    },
+{
+name:"PSG Marseille",
+type:"⚽ مباراة",
+description:"PSG 🆚 Marseille",
+page:"matches.html"
+},
 
-    // MATCHES
+{
+name:"Manchester City Arsenal",
+type:"⚽ مباراة",
+description:"Manchester City 🆚 Arsenal",
+page:"matches.html"
+},
 
-    {
-        name: "Barcelona Real Madrid",
-        type: "⚽ مباراة",
-        description: "Barcelona 🆚 Real Madrid — 20:00",
-        page: "matches.html"
-    },
+{
+name:"Inter AC Milan",
+type:"⚽ مباراة",
+description:"Inter 🆚 AC Milan",
+page:"matches.html"
+},
 
-    {
-        name: "PSG Marseille",
-        type: "⚽ مباراة",
-        description: "PSG 🆚 Marseille — 21:00",
-        page: "matches.html"
-    },
+{
+name:"أخبار كرة القدم",
+type:"📰 خبر",
+description:"أحدث أخبار كرة القدم العالمية",
+page:"news.html"
+},
 
-    {
-        name: "Manchester City Arsenal",
-        type: "⚽ مباراة",
-        description: "Manchester City 🆚 Arsenal — 18:30",
-        page: "matches.html"
-    },
-
-    {
-        name: "Inter AC Milan",
-        type: "⚽ مباراة",
-        description: "Inter 🆚 AC Milan — 19:45",
-        page: "matches.html"
-    },
-
-    // NEWS
-
-    {
-        name: "أخبار كرة القدم",
-        type: "📰 خبر",
-        description: "أحدث أخبار كرة القدم العالمية",
-        page: "news.html"
-    },
-
-    {
-        name: "سوق الانتقالات",
-        type: "📰 خبر",
-        description: "آخر أخبار انتقالات اللاعبين",
-        page: "news.html"
-    },
-
-    {
-        name: "دوري أبطال أوروبا",
-        type: "📰 خبر",
-        description: "آخر أخبار دوري أبطال أوروبا",
-        page: "news.html"
-    }
+{
+name:"سوق الانتقالات",
+type:"📰 خبر",
+description:"آخر أخبار انتقالات اللاعبين",
+page:"transfers.html"
+}
 
 ];
 
 
-function goToSearch(query) {
+function goToSearch(query){
 
-    query = query.trim();
+query=query.trim();
 
-    if (query === "") {
-        return;
-    }
+if(!query)return;
 
-    window.location.href =
-        "search.html?q=" + encodeURIComponent(query);
+window.location.href=
+"search.html?q="+encodeURIComponent(query);
 
 }
 
 
-function setupSearchInputs() {
+function setupSearchInputs(){
 
-    const inputs =
-        document.querySelectorAll(".search");
+const inputs=
+document.querySelectorAll(".search");
 
-    inputs.forEach(function(input) {
+inputs.forEach(input=>{
 
-        input.addEventListener("keydown", function(event) {
+input.addEventListener("keydown",event=>{
 
-            if (event.key === "Enter") {
+if(event.key==="Enter"){
 
-                goToSearch(input.value);
+goToSearch(input.value);
 
-            }
+}
 
-        });
+});
 
-    });
+});
 
 }
 
 
-function displayResults() {
+function displayResults(){
 
-    const resultsContainer =
-        document.getElementById("results");
+const resultsContainer=
+document.getElementById("results");
 
-    const queryText =
-        document.getElementById("queryText");
+const queryText=
+document.getElementById("queryText");
 
-    const searchInput =
-        document.getElementById("globalSearch");
+const searchInput=
+document.getElementById("globalSearch");
 
-    if (!resultsContainer) {
-        return;
-    }
+if(!resultsContainer)return;
 
-    const params =
-        new URLSearchParams(window.location.search);
+const params=
+new URLSearchParams(window.location.search);
 
-    const query =
-        (params.get("q") || "").trim();
+const query=
+(params.get("q")||"").trim();
 
-    if (queryText) {
-        queryText.textContent =
-            query || "الكل";
-    }
+if(queryText)
+queryText.textContent=query||"الكل";
 
-    if (searchInput) {
-        searchInput.value = query;
-    }
+if(searchInput)
+searchInput.value=query;
 
-    if (!query) {
+if(!query){
 
-        resultsContainer.innerHTML = `
-            <div class="empty">
-                <h2>🔎 اكتب كلمة للبحث</h2>
-                <p>مثلاً: Messi أو Barcelona أو Real Madrid</p>
-            </div>
-        `;
+resultsContainer.innerHTML=`
+<div class="empty">
+<h2>🔎 اكتب كلمة للبحث</h2>
+<p>مثلاً Messi أو Barcelona</p>
+</div>
+`;
 
-        return;
-    }
+return;
 
-    const normalizedQuery =
-        query.toLowerCase();
+}
 
-    const results =
-        FOOTZONE_DATA.filter(function(item) {
+const q=query.toLowerCase();
 
-            const text =
-                (
-                    item.name +
-                    " " +
-                    item.type +
-                    " " +
-                    item.description
-                ).toLowerCase();
+const results=
+FOOTZONE_DATA.filter(item=>{
 
-            return text.includes(normalizedQuery);
+const text=
+(
+item.name+
+" "+
+item.type+
+" "+
+item.description
+).toLowerCase();
 
-        });
+return text.includes(q);
+
+});
 
 
-    if (results.length === 0) {
+if(results.length===0){
 
-        resultsContainer.innerHTML = `
-            <div class="empty">
-                <h2>❌ ما لقيناش نتائج</h2>
-                <p>جرّب كلمة أخرى مثل Messi أو Barcelona.</p>
-            </div>
-        `;
+resultsContainer.innerHTML=`
+<div class="empty">
+<h2>❌ ما لقيناش نتائج</h2>
+<p>جرّب Messi أو Barcelona أو Real Madrid.</p>
+</div>
+`;
 
-        return;
-    }
+return;
+
+}
 
 
-    resultsContainer.innerHTML =
-        results.map(function(item) {
+resultsContainer.innerHTML=
+results.map(item=>`
 
-            return `
-                <div class="result">
+<div class="result">
 
-                    <div class="type">
-                        ${item.type}
-                    </div>
+<div class="type">
+${item.type}
+</div>
 
-                    <h2>
-                        ${item.name}
-                    </h2>
+<h2>${item.name}</h2>
 
-                    <p>
-                        ${item.description}
-                    </p>
+<p>${item.description}</p>
 
-                    <a href="${item.page}">
-                        مشاهدة الصفحة ←
-                    </a>
+<a href="${item.page}">
+مشاهدة التفاصيل →
+</a>
 
-                </div>
-            `;
+</div>
 
-        }).join("");
+`).join("");
 
 }
 
 
 document.addEventListener(
-    "DOMContentLoaded",
-    function() {
+"DOMContentLoaded",
+()=>{
 
-        setupSearchInputs();
+setupSearchInputs();
+displayResults();
 
-        displayResults();
-
-    }
+}
 );
