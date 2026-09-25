@@ -1,34 +1,150 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>FootZone - الفرق</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial;background:#07111f;color:white}
-header{background:#050b14;padding:18px 6%;display:flex;align-items:center;gap:25px;flex-wrap:wrap;border-bottom:1px solid #17304a}
-.logo{font-size:28px;font-weight:bold;color:#00ff88}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:#ddd;text-decoration:none;font-weight:bold}
-nav a:hover{color:#00ff88}
-.search{margin-right:auto;background:#101d2d;border:1px solid #29425d;color:#fff;border-radius:25px;padding:12px 18px;width:230px}
-.container{width:90%;max-width:1200px;margin:40px auto}
-.title{font-size:32px;margin-bottom:25px;border-right:4px solid #00ff88;padding-right:12px}
-.country{margin:30px 0 15px;color:#00ff88;font-size:22px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
-.team{background:#0d1a2a;border:1px solid #1d344b;border-radius:15px;padding:22px;text-align:center;font-size:18px}
-.team:hover{border-color:#00ff88;transform:translateY(-3px)}
-.icon{font-size:38px;margin-bottom:12px}
-footer{text-align:center;padding:35px;background:#050b14;margin-top:50px;color:#8293a5}
-@media(max-width:700px){.search{width:100%;margin:0}nav{width:100%}}
+
+body{
+font-family:Arial,sans-serif;
+background:#07111f;
+color:white;
+}
+
+header{
+background:#050b14;
+padding:18px 6%;
+display:flex;
+align-items:center;
+gap:25px;
+flex-wrap:wrap;
+border-bottom:1px solid #17304a;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#00ff88;
+}
+
+nav{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#00ff88;
+}
+
+.search{
+margin-right:auto;
+background:#101d2d;
+border:1px solid #29425d;
+color:white;
+border-radius:25px;
+padding:12px 18px;
+width:250px;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:45px auto;
+}
+
+.title{
+font-size:34px;
+border-right:4px solid #00ff88;
+padding-right:12px;
+margin-bottom:30px;
+}
+
+.country{
+color:#00ff88;
+font-size:23px;
+margin:30px 0 15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+gap:18px;
+}
+
+.team{
+background:linear-gradient(145deg,#0d1a2a,#102235);
+border:1px solid #1d344b;
+border-radius:18px;
+padding:25px;
+text-align:center;
+transition:.25s;
+}
+
+.team:hover{
+border-color:#00ff88;
+transform:translateY(-5px);
+}
+
+.icon{
+font-size:50px;
+margin-bottom:12px;
+}
+
+.team h3{
+margin-bottom:15px;
+}
+
+.details{
+display:block;
+background:#00ff88;
+color:#03110a;
+padding:10px;
+border-radius:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+padding:35px;
+background:#050b14;
+margin-top:50px;
+color:#8293a5;
+}
+
+@media(max-width:700px){
+
+.search{
+width:100%;
+margin:0;
+}
+
+nav{
+width:100%;
+}
+
+}
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <div class="logo">⚽ FootZone</div>
 
 <nav>
@@ -41,6 +157,7 @@ footer{text-align:center;padding:35px;background:#050b14;margin-top:50px;color:#
 </nav>
 
 <input class="search" placeholder="🔎 ابحث عن فريق...">
+
 </header>
 
 <div class="container">
@@ -48,58 +165,167 @@ footer{text-align:center;padding:35px;background:#050b14;margin-top:50px;color:#
 <h1 class="title">🏆 الفرق</h1>
 
 <h2 class="country">🇪🇸 إسبانيا</h2>
+
 <div class="grid">
-<div class="team"><div class="icon">🔵🔴</div>Barcelona</div>
-<div class="team"><div class="icon">⚪</div>Real Madrid</div>
-<div class="team"><div class="icon">🔴⚪</div>Atlético Madrid</div>
-<div class="team"><div class="icon">🟢</div>Real Betis</div>
+
+<div class="team">
+<div class="icon">🔵🔴</div>
+<h3>Barcelona</h3>
+<a class="details" href="team.html?team=barcelona">التفاصيل →</a>
 </div>
+
+<div class="team">
+<div class="icon">⚪</div>
+<h3>Real Madrid</h3>
+<a class="details" href="team.html?team=realmadrid">التفاصيل →</a>
+</div>
+
+<div class="team">
+<div class="icon">🔴⚪</div>
+<h3>Atlético Madrid</h3>
+<a class="details" href="team.html?team=atletico">التفاصيل →</a>
+</div>
+
+</div>
+
 
 <h2 class="country">🏴 إنجلترا</h2>
+
 <div class="grid">
-<div class="team"><div class="icon">🔵</div>Manchester City</div>
-<div class="team"><div class="icon">🔴</div>Manchester United</div>
-<div class="team"><div class="icon">🔴</div>Liverpool</div>
-<div class="team"><div class="icon">🔵</div>Chelsea</div>
-<div class="team"><div class="icon">🔴</div>Arsenal</div>
+
+<div class="team">
+<div class="icon">🔵</div>
+<h3>Manchester City</h3>
+<a class="details" href="team.html?team=mancity">التفاصيل →</a>
 </div>
+
+<div class="team">
+<div class="icon">🔴</div>
+<h3>Manchester United</h3>
+<a class="details" href="team.html?team=manunited">التفاصيل →</a>
+</div>
+
+<div class="team">
+<div class="icon">🔴</div>
+<h3>Liverpool</h3>
+<a class="details" href="team.html?team=liverpool">التفاصيل →</a>
+</div>
+
+<div class="team">
+<div class="icon">🔵</div>
+<h3>Chelsea</h3>
+<a class="details" href="team.html?team=chelsea">التفاصيل →</a>
+</div>
+
+<div class="team">
+<div class="icon">🔴</div>
+<h3>Arsenal</h3>
+<a class="details" href="team.html?team=arsenal">التفاصيل →</a>
+</div>
+
+</div>
+
 
 <h2 class="country">🇫🇷 فرنسا</h2>
+
 <div class="grid">
-<div class="team"><div class="icon">🔵🔴</div>PSG</div>
-<div class="team"><div class="icon">⚪🔵</div>Marseille</div>
-<div class="team"><div class="icon">🔴⚪</div>Monaco</div>
-<div class="team"><div class="icon">🔴</div>Lille</div>
+
+<div class="team">
+<div class="icon">🔵🔴</div>
+<h3>PSG</h3>
+<a class="details" href="team.html?team=psg">التفاصيل →</a>
 </div>
+
+<div class="team">
+<div class="icon">⚪🔵</div>
+<h3>Marseille</h3>
+<a class="details" href="team.html?team=marseille">التفاصيل →</a>
+</div>
+
+</div>
+
 
 <h2 class="country">🇮🇹 إيطاليا</h2>
+
 <div class="grid">
-<div class="team"><div class="icon">🔵⚫</div>Inter</div>
-<div class="team"><div class="icon">🔴⚫</div>AC Milan</div>
-<div class="team"><div class="icon">⚫⚪</div>Juventus</div>
-<div class="team"><div class="icon">🔵</div>Napoli</div>
+
+<div class="team">
+<div class="icon">🔵⚫</div>
+<h3>Inter</h3>
+<a class="details" href="team.html?team=inter">التفاصيل →</a>
 </div>
+
+<div class="team">
+<div class="icon">🔴⚫</div>
+<h3>AC Milan</h3>
+<a class="details" href="team.html?team=milan">التفاصيل →</a>
+</div>
+
+<div class="team">
+<div class="icon">⚫⚪</div>
+<h3>Juventus</h3>
+<a class="details" href="team.html?team=juventus">التفاصيل →</a>
+</div>
+
+</div>
+
 
 <h2 class="country">🇩🇪 ألمانيا</h2>
+
 <div class="grid">
-<div class="team"><div class="icon">🔴⚪</div>Bayern Munich</div>
-<div class="team"><div class="icon">🟡⚫</div>Dortmund</div>
-<div class="team"><div class="icon">🔴⚪</div>Leverkusen</div>
-<div class="team"><div class="icon">🔴⚪</div>RB Leipzig</div>
+
+<div class="team">
+<div class="icon">🔴⚪</div>
+<h3>Bayern Munich</h3>
+<a class="details" href="team.html?team=bayern">التفاصيل →</a>
 </div>
+
+<div class="team">
+<div class="icon">🟡⚫</div>
+<h3>Dortmund</h3>
+<a class="details" href="team.html?team=dortmund">التفاصيل →</a>
+</div>
+
+</div>
+
 
 <h2 class="country">🇹🇳 تونس</h2>
+
 <div class="grid">
-<div class="team"><div class="icon">🔴🟡</div>Espérance de Tunis</div>
-<div class="team"><div class="icon">🔴⚪</div>Club Africain</div>
-<div class="team"><div class="icon">⭐🔴</div>Étoile du Sahel</div>
-<div class="team"><div class="icon">⚫⚪</div>CS Sfaxien</div>
+
+<div class="team">
+<div class="icon">🔴🟡</div>
+<h3>Espérance de Tunis</h3>
+<a class="details" href="team.html?team=esperance">التفاصيل →</a>
+</div>
+
+<div class="team">
+<div class="icon">🔴⚪</div>
+<h3>Club Africain</h3>
+<a class="details" href="team.html?team=clubafricain">التفاصيل →</a>
+</div>
+
+<div class="team">
+<div class="icon">⭐🔴</div>
+<h3>Étoile du Sahel</h3>
+<a class="details" href="team.html?team=etoile">التفاصيل →</a>
+</div>
+
+<div class="team">
+<div class="icon">⚫⚪</div>
+<h3>CS Sfaxien</h3>
+<a class="details" href="team.html?team=sfaxien">التفاصيل →</a>
 </div>
 
 </div>
 
-<footer>© 2026 FootZone</footer>
+</div>
+
+<footer>
+© 2026 FootZone
+</footer>
 
 <script src="search.js"></script>
+
 </body>
 </html>
