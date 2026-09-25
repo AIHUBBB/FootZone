@@ -8,18 +8,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const query = input.value.toLowerCase().trim();
 
-            const pageContent = document.querySelectorAll(
-                ".card, .match, .transfer, .team, .player, .news"
+            const elements = document.querySelectorAll(
+                ".card, .match, .transfer, .team, .player"
             );
 
-            pageContent.forEach(function (item) {
+            elements.forEach(function (element) {
 
-                const text = item.innerText.toLowerCase();
+                const text = element.innerText.toLowerCase();
 
                 if (query === "" || text.includes(query)) {
-                    item.style.display = "";
+                    element.style.display = "";
                 } else {
-                    item.style.display = "none";
+                    element.style.display = "none";
                 }
 
             });
