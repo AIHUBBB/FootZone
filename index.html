@@ -24,7 +24,7 @@
       color: inherit;
     }
 
-    /* ===== HEADER ===== */
+    /* HEADER */
 
     header {
       background: #071a12;
@@ -80,7 +80,7 @@
       color: #9ca3af;
     }
 
-    /* ===== HERO ===== */
+    /* HERO */
 
     .hero {
       min-height: 480px;
@@ -161,7 +161,7 @@
       background: rgba(255,255,255,0.12);
     }
 
-    /* ===== CONTAINER ===== */
+    /* CONTAINER */
 
     .container {
       width: 88%;
@@ -190,7 +190,7 @@
       font-size: 14px;
     }
 
-    /* ===== MATCHES ===== */
+    /* MATCHES */
 
     .matches {
       display: grid;
@@ -258,7 +258,7 @@
       font-weight: bold;
     }
 
-    /* ===== NEWS ===== */
+    /* NEWS */
 
     .news {
       display: grid;
@@ -311,7 +311,7 @@
       line-height: 1.6;
     }
 
-    /* ===== TRANSFERS ===== */
+    /* TRANSFERS */
 
     .transfer-box {
       background: #071a12;
@@ -348,7 +348,7 @@
       padding: 0 6px;
     }
 
-    /* ===== FEATURES ===== */
+    /* FEATURES */
 
     .features {
       display: grid;
@@ -379,7 +379,7 @@
       line-height: 1.5;
     }
 
-    /* ===== FOOTER ===== */
+    /* FOOTER */
 
     footer {
       background: #071a12;
@@ -435,7 +435,7 @@
       font-size: 13px;
     }
 
-    /* ===== MOBILE ===== */
+    /* MOBILE */
 
     @media (max-width: 900px) {
 
@@ -519,8 +519,11 @@
     </div>
 
     <nav>
-      <a href="#">الرئيسية</a>
-      <a href="#matches">المباريات</a>
+      <a href="index.html">الرئيسية</a>
+
+      <!-- تم ربطها بصفحة المباريات -->
+      <a href="matches.html">المباريات</a>
+
       <a href="#news">الأخبار</a>
       <a href="#transfers">الانتقالات</a>
       <a href="#">الفرق</a>
@@ -557,13 +560,16 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="#matches" class="btn btn-primary">
+
+        <!-- تم ربط الزر بصفحة المباريات -->
+        <a href="matches.html" class="btn btn-primary">
           ⚽ مباريات اليوم
         </a>
 
         <a href="#news" class="btn btn-secondary">
           📰 آخر الأخبار
         </a>
+
       </div>
 
     </div>
@@ -578,8 +584,13 @@
     <div class="container">
 
       <div class="section-title">
+
         <h2>🔥 مباريات اليوم</h2>
-        <a href="#">عرض الكل ←</a>
+
+        <a href="matches.html">
+          عرض الكل ←
+        </a>
+
       </div>
 
       <div class="matches">
@@ -690,8 +701,13 @@
     <div class="container">
 
       <div class="section-title">
+
         <h2>📰 آخر الأخبار</h2>
-        <a href="#">كل الأخبار ←</a>
+
+        <a href="#">
+          كل الأخبار ←
+        </a>
+
       </div>
 
       <div class="news">
@@ -788,8 +804,13 @@
       <div class="transfer-box">
 
         <div class="section-title">
+
           <h2>🔄 آخر الانتقالات</h2>
-          <a href="#">عرض الكل ←</a>
+
+          <a href="#">
+            عرض الكل ←
+          </a>
+
         </div>
 
         <div class="transfers">
@@ -861,34 +882,51 @@
 
         <div class="feature">
           <div class="feature-icon">⚽</div>
+
           <h3>المباريات</h3>
+
           <p>
             تابع مباريات كرة القدم ونتائجها.
           </p>
         </div>
 
+
         <div class="feature">
+
           <div class="feature-icon">📰</div>
+
           <h3>الأخبار</h3>
+
           <p>
             آخر أخبار كرة القدم العالمية.
           </p>
+
         </div>
 
+
         <div class="feature">
+
           <div class="feature-icon">👤</div>
+
           <h3>اللاعبون</h3>
+
           <p>
             معلومات وإحصائيات اللاعبين.
           </p>
+
         </div>
 
+
         <div class="feature">
+
           <div class="feature-icon">🏆</div>
+
           <h3>البطولات</h3>
+
           <p>
             أهم البطولات والدوريات العالمية.
           </p>
+
         </div>
 
       </div>
@@ -922,8 +960,8 @@
 
         <h3>روابط</h3>
 
-        <a href="#">الرئيسية</a>
-        <a href="#matches">المباريات</a>
+        <a href="index.html">الرئيسية</a>
+        <a href="matches.html">المباريات</a>
         <a href="#news">الأخبار</a>
         <a href="#transfers">الانتقالات</a>
 
