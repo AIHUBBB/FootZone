@@ -2,44 +2,36 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FootZone | الانتقالات</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FootZone - الانتقالات</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0b1020;color:white}
-a{text-decoration:none;color:inherit}
-header{background:#11182d;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:1000;border-bottom:1px solid #26304d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial;background:#07111f;color:white}
+header{background:#050b14;padding:18px 6%;display:flex;align-items:center;gap:25px;flex-wrap:wrap;border-bottom:1px solid #17304a}
 .logo{font-size:28px;font-weight:bold;color:#00ff88}
-nav{display:flex;gap:20px;flex-wrap:wrap}
-nav a{color:#ddd}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:#ddd;text-decoration:none;font-weight:bold}
 nav a:hover{color:#00ff88}
-.search{background:#18213b;border:1px solid #2c3758;color:white;padding:10px 15px;border-radius:10px;outline:none;width:180px}
-.hero{padding:70px 20px;text-align:center;background:radial-gradient(circle,#17345c,#0b1020 70%)}
-.hero h1{font-size:45px;margin-bottom:15px}
-.hero p{color:#aaa}
-section{padding:50px 6%}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:35px}
-.filter{background:#18213b;border:1px solid #2c3758;color:white;padding:10px 18px;border-radius:25px}
-.filter:hover,.active{background:#00ff88;color:#07130d}
-.transfers{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.transfer{background:#11182d;border:1px solid #26304d;border-radius:18px;padding:25px}
-.player{font-size:22px;font-weight:bold;margin-bottom:20px}
-.move{display:flex;justify-content:space-between;align-items:center;gap:15px}
-.club{background:#18213b;padding:15px;border-radius:10px;text-align:center;flex:1}
-.arrow{color:#00ff88;font-size:25px}
-.fee{margin-top:20px;color:#00ff88;font-weight:bold;font-size:18px}
-footer{background:#070b16;padding:35px 6%;text-align:center;color:#888;border-top:1px solid #26304d}
-@media(max-width:900px){.transfers{grid-template-columns:1fr}header{flex-direction:column}.search{width:100%}}
-@media(max-width:600px){.hero h1{font-size:35px}nav{justify-content:center}.move{flex-direction:column}}
+.search{margin-right:auto;background:#101d2d;border:1px solid #29425d;color:#fff;border-radius:25px;padding:12px 18px;width:230px}
+.container{width:90%;max-width:1200px;margin:40px auto}
+.title{font-size:32px;margin-bottom:25px;border-right:4px solid #00ff88;padding-right:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.transfer{background:#0d1a2a;border:1px solid #1d344b;border-radius:16px;padding:25px}
+.transfer:hover{border-color:#00ff88}
+.player{font-size:21px;font-weight:bold;margin-bottom:18px}
+.arrow{color:#00ff88;font-size:25px;margin:10px}
+.from,.to{color:#b8c6d4;margin:7px}
+.fee{color:#00ff88;font-size:20px;font-weight:bold;margin-top:15px}
+footer{text-align:center;padding:35px;background:#050b14;margin-top:50px;color:#8293a5}
+@media(max-width:700px){.search{width:100%;margin:0}nav{width:100%}}
 </style>
 </head>
 
 <body>
 
 <header>
-
-<a href="index.html" class="logo">⚽ FootZone</a>
+<div class="logo">⚽ FootZone</div>
 
 <nav>
 <a href="index.html">الرئيسية</a>
@@ -50,90 +42,60 @@ footer{background:#070b16;padding:35px 6%;text-align:center;color:#888;border-to
 <a href="players.html">اللاعبون</a>
 </nav>
 
-<input class="search" type="text" placeholder="🔎 ابحث...">
-
+<input class="search" placeholder="🔎 ابحث عن انتقال...">
 </header>
 
-<section class="hero">
-<h1>🔄 سوق الانتقالات</h1>
-<p>آخر أخبار وصفقات انتقالات اللاعبين</p>
-</section>
+<div class="container">
 
-<section>
+<h1 class="title">🔄 سوق الانتقالات</h1>
 
-<div class="filters">
-<button class="filter active">الكل</button>
-<button class="filter">أوروبا</button>
-<button class="filter">إسبانيا</button>
-<button class="filter">إنجلترا</button>
-<button class="filter">فرنسا</button>
-<button class="filter">إيطاليا</button>
-<button class="filter">ألمانيا</button>
-</div>
-
-<div class="transfers">
+<div class="grid">
 
 <div class="transfer">
 <div class="player">⭐ لاعب جديد</div>
-<div class="move">
-<div class="club">النادي السابق</div>
-<div class="arrow">←</div>
-<div class="club">Real Madrid</div>
-</div>
+<div class="from">النادي السابق: Barcelona</div>
+<div class="arrow">⬇️</div>
+<div class="to">النادي الجديد: Manchester City</div>
 <div class="fee">€50M</div>
 </div>
 
 <div class="transfer">
 <div class="player">🔥 لاعب جديد</div>
-<div class="move">
-<div class="club">نادي أوروبي</div>
-<div class="arrow">←</div>
-<div class="club">Barcelona</div>
-</div>
+<div class="from">النادي السابق: PSG</div>
+<div class="arrow">⬇️</div>
+<div class="to">النادي الجديد: Real Madrid</div>
 <div class="fee">€75M</div>
 </div>
 
 <div class="transfer">
 <div class="player">⚡ لاعب جديد</div>
-<div class="move">
-<div class="club">نادي فرنسي</div>
-<div class="arrow">←</div>
-<div class="club">Manchester City</div>
-</div>
+<div class="from">النادي السابق: Inter</div>
+<div class="arrow">⬇️</div>
+<div class="to">النادي الجديد: Chelsea</div>
 <div class="fee">€60M</div>
 </div>
 
 <div class="transfer">
-<div class="player">🎯 لاعب جديد</div>
-<div class="move">
-<div class="club">نادي إيطالي</div>
-<div class="arrow">←</div>
-<div class="club">PSG</div>
-</div>
+<div class="player">💫 لاعب جديد</div>
+<div class="from">النادي السابق: Dortmund</div>
+<div class="arrow">⬇️</div>
+<div class="to">النادي الجديد: Liverpool</div>
 <div class="fee">€45M</div>
 </div>
 
 <div class="transfer">
-<div class="player">💪 لاعب جديد</div>
-<div class="move">
-<div class="club">نادي ألماني</div>
-<div class="arrow">←</div>
-<div class="club">Liverpool</div>
-</div>
+<div class="player">🚀 لاعب جديد</div>
+<div class="from">النادي السابق: Napoli</div>
+<div class="arrow">⬇️</div>
+<div class="to">النادي الجديد: Bayern</div>
 <div class="fee">€30M</div>
 </div>
 
 </div>
+</div>
 
-</section>
-
-<footer>
-<div class="logo">⚽ FootZone</div>
-<p>جميع أخبار كرة القدم في مكان واحد.</p>
-<p style="margin-top:15px">© 2026 FootZone</p>
-</footer>
+<footer>© 2026 FootZone</footer>
 
 <script src="search.js"></script>
-
 </body>
 </html>
