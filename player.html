@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FootZone - Player</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#07111f;
+color:white;
+}
+
+header{
+background:#050b14;
+padding:18px 6%;
+display:flex;
+align-items:center;
+gap:25px;
+flex-wrap:wrap;
+border-bottom:1px solid #17304a;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#00ff88;
+}
+
+nav{
+display:flex;
+gap:18px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#ddd;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#00ff88;
+}
+
+.search{
+margin-right:auto;
+background:#101d2d;
+border:1px solid #29425d;
+color:white;
+border-radius:25px;
+padding:12px 18px;
+width:250px;
+outline:none;
+}
+
+.container{
+width:90%;
+max-width:1000px;
+margin:50px auto;
+}
+
+.profile{
+background:linear-gradient(145deg,#0d1a2a,#102c30);
+border:1px solid #00ff88;
+border-radius:25px;
+padding:40px;
+display:grid;
+grid-template-columns:250px 1fr;
+gap:40px;
+align-items:center;
+}
+
+.avatar{
+height:250px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:120px;
+background:#07111f;
+border-radius:20px;
+}
+
+.name{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.country{
+color:#00ff88;
+font-size:20px;
+margin-bottom:20px;
+}
+
+.info{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.stat{
+background:#07111f;
+padding:18px;
+border-radius:14px;
+border:1px solid #19334a;
+}
+
+.stat span{
+display:block;
+color:#8193a7;
+margin-bottom:8px;
+}
+
+.stat strong{
+font-size:20px;
+}
+
+.back{
+display:inline-block;
+margin-top:25px;
+background:#00ff88;
+color:#03110a;
+padding:12px 22px;
+border-radius:25px;
+text-decoration:none;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+padding:35px;
+background:#050b14;
+margin-top:50px;
+color:#8293a5;
+}
+
+@media(max-width:700px){
+
+.profile{
+grid-template-columns:1fr;
+padding:25px;
+}
+
+.name{
+font-size:32px;
+}
+
+.info{
+grid-template-columns:1fr;
+}
+
+.search{
+width:100%;
+margin:0;
+}
+
+nav{
+width:100%;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">⚽ FootZone</div>
+
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="matches.html">المباريات</a>
+<a href="news.html">الأخبار</a>
+<a href="transfers.html">الانتقالات</a>
+<a href="teams.html">الفرق</a>
+<a href="players.html">اللاعبون</a>
+</nav>
+
+<input class="search" placeholder="🔎 ابحث...">
+
+</header>
+
+<div class="container">
+
+<div id="profile"></div>
+
+</div>
+
+<footer>
+© 2026 FootZone
+</footer>
+
+<script>
+
+const players = {
+
+messi:{
+name:"Lionel Messi",
+flag:"🇦🇷",
+country:"Argentina",
+club:"Inter Miami",
+position:"Forward",
+number:"10",
+age:"39",
+icon:"🐐"
+},
+
+mbappe:{
+name:"Kylian Mbappé",
+flag:"🇫🇷",
+country:"France",
+club:"Real Madrid",
+position:"Forward",
+number:"9",
+age:"27",
+icon:"⚡"
+},
+
+yamal:{
+name:"Lamine Yamal",
+flag:"🇪🇸",
+country:"Spain",
+club:"Barcelona",
+position:"Right Winger",
+number:"10",
+age:"19",
+icon:"🔥"
+},
+
+haaland:{
+name:"Erling Haaland",
+flag:"🇳🇴",
+country:"Norway",
+club:"Manchester City",
+position:"Striker",
+number:"9",
+age:"26",
+icon:"🤖"
+},
+
+salah:{
+name:"Mohamed Salah",
+flag:"🇪🇬",
+country:"Egypt",
+club:"Liverpool",
+position:"Right Winger",
+number:"11",
+age:"34",
+icon:"⚡"
+},
+
+debruyne:{
+name:"Kevin De Bruyne",
+flag:"🇧🇪",
+country:"Belgium",
+club:"Napoli",
+position:"Midfielder",
+number:"17",
+age:"35",
+icon:"🎯"
+},
+
+vinicius:{
+name:"Vinícius Júnior",
+flag:"🇧🇷",
+country:"Brazil",
+club:"Real Madrid",
+position:"Left Winger",
+number:"7",
+age:"26",
+icon:"🚀"
+},
+
+courtois:{
+name:"Thibaut Courtois",
+flag:"🇧🇪",
+country:"Belgium",
+club:"Real Madrid",
+position:"Goalkeeper",
+number:"1",
+age:"34",
+icon:"🧤"
+}
+
+};
+
+const params = new URLSearchParams(window.location.search);
+
+const id = params.get("player") || "messi";
+
+const player = players[id];
+
+const profile = document.getElementById("profile");
+
+if(player){
+
+profile.innerHTML = `
+
+<div class="profile">
+
+<div class="avatar">
+${player.icon}
+</div>
+
+<div>
+
+<h1 class="name">
+${player.name}
+</h1>
+
+<div class="country">
+${player.flag} ${player.country}
+</div>
+
+<div class="info">
+
+<div class="stat">
+<span>النادي</span>
+<strong>${player.club}</strong>
+</div>
+
+<div class="stat">
+<span>المركز</span>
+<strong>${player.position}</strong>
+</div>
+
+<div class="stat">
+<span>رقم القميص</span>
+<strong>${player.number}</strong>
+</div>
+
+<div class="stat">
+<span>العمر</span>
+<strong>${player.age}</strong>
+</div>
+
+</div>
+
+<a class="back" href="players.html">
+← العودة للاعبين
+</a>
+
+</div>
+
+</div>
+
+`;
+
+}else{
+
+profile.innerHTML = `
+<div class="profile">
+<div>
+<h1 class="name">اللاعب غير موجود</h1>
+<a class="back" href="players.html">← العودة</a>
+</div>
+</div>
+`;
+
+}
+
+</script>
+
+<script src="search.js"></script>
+
+</body>
+</html>
