@@ -1,188 +1,395 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+const FOOTZONE_DATA = [
 
-<title>FootZone - البحث</title>
+    // PLAYERS
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
+    {
+        name: "Lionel Messi",
+        type: "👤 لاعب",
+        description: "🇦🇷 الأرجنتين — Inter Miami — الرقم 10",
+        page: "players.html"
+    },
 
-body{
-font-family:Arial,sans-serif;
-background:#07111f;
-color:white;
-min-height:100vh;
+    {
+        name: "Kylian Mbappé",
+        type: "👤 لاعب",
+        description: "🇫🇷 فرنسا — Real Madrid — الرقم 9",
+        page: "players.html"
+    },
+
+    {
+        name: "Lamine Yamal",
+        type: "👤 لاعب",
+        description: "🇪🇸 إسبانيا — Barcelona — الرقم 10",
+        page: "players.html"
+    },
+
+    {
+        name: "Erling Haaland",
+        type: "👤 لاعب",
+        description: "🇳🇴 النرويج — Manchester City — الرقم 9",
+        page: "players.html"
+    },
+
+    {
+        name: "Mohamed Salah",
+        type: "👤 لاعب",
+        description: "🇪🇬 مصر — Liverpool — الرقم 11",
+        page: "players.html"
+    },
+
+    {
+        name: "Kevin De Bruyne",
+        type: "👤 لاعب",
+        description: "🇧🇪 بلجيكا — Napoli",
+        page: "players.html"
+    },
+
+    {
+        name: "Vinícius Júnior",
+        type: "👤 لاعب",
+        description: "🇧🇷 البرازيل — Real Madrid — الرقم 7",
+        page: "players.html"
+    },
+
+    {
+        name: "Thibaut Courtois",
+        type: "👤 لاعب",
+        description: "🇧🇪 بلجيكا — Real Madrid — الرقم 1",
+        page: "players.html"
+    },
+
+    // TEAMS
+
+    {
+        name: "Barcelona",
+        type: "🏆 فريق",
+        description: "🇪🇸 إسبانيا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Real Madrid",
+        type: "🏆 فريق",
+        description: "🇪🇸 إسبانيا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Manchester City",
+        type: "🏆 فريق",
+        description: "🏴 إنجلترا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Manchester United",
+        type: "🏆 فريق",
+        description: "🏴 إنجلترا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Liverpool",
+        type: "🏆 فريق",
+        description: "🏴 إنجلترا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Chelsea",
+        type: "🏆 فريق",
+        description: "🏴 إنجلترا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Arsenal",
+        type: "🏆 فريق",
+        description: "🏴 إنجلترا",
+        page: "teams.html"
+    },
+
+    {
+        name: "PSG",
+        type: "🏆 فريق",
+        description: "🇫🇷 فرنسا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Marseille",
+        type: "🏆 فريق",
+        description: "🇫🇷 فرنسا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Inter",
+        type: "🏆 فريق",
+        description: "🇮🇹 إيطاليا",
+        page: "teams.html"
+    },
+
+    {
+        name: "AC Milan",
+        type: "🏆 فريق",
+        description: "🇮🇹 إيطاليا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Juventus",
+        type: "🏆 فريق",
+        description: "🇮🇹 إيطاليا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Bayern Munich",
+        type: "🏆 فريق",
+        description: "🇩🇪 ألمانيا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Dortmund",
+        type: "🏆 فريق",
+        description: "🇩🇪 ألمانيا",
+        page: "teams.html"
+    },
+
+    {
+        name: "Espérance de Tunis",
+        type: "🏆 فريق",
+        description: "🇹🇳 تونس",
+        page: "teams.html"
+    },
+
+    {
+        name: "Club Africain",
+        type: "🏆 فريق",
+        description: "🇹🇳 تونس",
+        page: "teams.html"
+    },
+
+    {
+        name: "Étoile du Sahel",
+        type: "🏆 فريق",
+        description: "🇹🇳 تونس",
+        page: "teams.html"
+    },
+
+    {
+        name: "CS Sfaxien",
+        type: "🏆 فريق",
+        description: "🇹🇳 تونس",
+        page: "teams.html"
+    },
+
+    // MATCHES
+
+    {
+        name: "Barcelona Real Madrid",
+        type: "⚽ مباراة",
+        description: "Barcelona 🆚 Real Madrid — 20:00",
+        page: "matches.html"
+    },
+
+    {
+        name: "PSG Marseille",
+        type: "⚽ مباراة",
+        description: "PSG 🆚 Marseille — 21:00",
+        page: "matches.html"
+    },
+
+    {
+        name: "Manchester City Arsenal",
+        type: "⚽ مباراة",
+        description: "Manchester City 🆚 Arsenal — 18:30",
+        page: "matches.html"
+    },
+
+    {
+        name: "Inter AC Milan",
+        type: "⚽ مباراة",
+        description: "Inter 🆚 AC Milan — 19:45",
+        page: "matches.html"
+    },
+
+    // NEWS
+
+    {
+        name: "أخبار كرة القدم",
+        type: "📰 خبر",
+        description: "أحدث أخبار كرة القدم العالمية",
+        page: "news.html"
+    },
+
+    {
+        name: "سوق الانتقالات",
+        type: "📰 خبر",
+        description: "آخر أخبار انتقالات اللاعبين",
+        page: "news.html"
+    },
+
+    {
+        name: "دوري أبطال أوروبا",
+        type: "📰 خبر",
+        description: "آخر أخبار دوري أبطال أوروبا",
+        page: "news.html"
+    }
+
+];
+
+
+function goToSearch(query) {
+
+    query = query.trim();
+
+    if (query === "") {
+        return;
+    }
+
+    window.location.href =
+        "search.html?q=" + encodeURIComponent(query);
+
 }
 
-header{
-background:#050b14;
-padding:18px 6%;
-display:flex;
-align-items:center;
-gap:25px;
-flex-wrap:wrap;
-border-bottom:1px solid #17304a;
+
+function setupSearchInputs() {
+
+    const inputs =
+        document.querySelectorAll(".search");
+
+    inputs.forEach(function(input) {
+
+        input.addEventListener("keydown", function(event) {
+
+            if (event.key === "Enter") {
+
+                goToSearch(input.value);
+
+            }
+
+        });
+
+    });
+
 }
 
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#00ff88;
+
+function displayResults() {
+
+    const resultsContainer =
+        document.getElementById("results");
+
+    const queryText =
+        document.getElementById("queryText");
+
+    const searchInput =
+        document.getElementById("globalSearch");
+
+    if (!resultsContainer) {
+        return;
+    }
+
+    const params =
+        new URLSearchParams(window.location.search);
+
+    const query =
+        (params.get("q") || "").trim();
+
+    if (queryText) {
+        queryText.textContent =
+            query || "الكل";
+    }
+
+    if (searchInput) {
+        searchInput.value = query;
+    }
+
+    if (!query) {
+
+        resultsContainer.innerHTML = `
+            <div class="empty">
+                <h2>🔎 اكتب كلمة للبحث</h2>
+                <p>مثلاً: Messi أو Barcelona أو Real Madrid</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    const normalizedQuery =
+        query.toLowerCase();
+
+    const results =
+        FOOTZONE_DATA.filter(function(item) {
+
+            const text =
+                (
+                    item.name +
+                    " " +
+                    item.type +
+                    " " +
+                    item.description
+                ).toLowerCase();
+
+            return text.includes(normalizedQuery);
+
+        });
+
+
+    if (results.length === 0) {
+
+        resultsContainer.innerHTML = `
+            <div class="empty">
+                <h2>❌ ما لقيناش نتائج</h2>
+                <p>جرّب كلمة أخرى مثل Messi أو Barcelona.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    resultsContainer.innerHTML =
+        results.map(function(item) {
+
+            return `
+                <div class="result">
+
+                    <div class="type">
+                        ${item.type}
+                    </div>
+
+                    <h2>
+                        ${item.name}
+                    </h2>
+
+                    <p>
+                        ${item.description}
+                    </p>
+
+                    <a href="${item.page}">
+                        مشاهدة الصفحة ←
+                    </a>
+
+                </div>
+            `;
+
+        }).join("");
+
 }
 
-nav{
-display:flex;
-gap:18px;
-flex-wrap:wrap;
-}
 
-nav a{
-color:#ddd;
-text-decoration:none;
-font-weight:bold;
-}
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
 
-nav a:hover{
-color:#00ff88;
-}
+        setupSearchInputs();
 
-.search{
-margin-right:auto;
-background:#101d2d;
-border:1px solid #29425d;
-color:#fff;
-border-radius:25px;
-padding:12px 18px;
-width:280px;
-outline:none;
-}
+        displayResults();
 
-.container{
-width:90%;
-max-width:1100px;
-margin:45px auto;
-}
-
-.title{
-font-size:32px;
-border-right:4px solid #00ff88;
-padding-right:12px;
-margin-bottom:25px;
-}
-
-#queryText{
-color:#00ff88;
-}
-
-.results{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:18px;
-}
-
-.result{
-background:#0d1a2a;
-border:1px solid #1d344b;
-border-radius:16px;
-padding:23px;
-}
-
-.result:hover{
-border-color:#00ff88;
-transform:translateY(-3px);
-}
-
-.type{
-color:#00ff88;
-font-size:14px;
-margin-bottom:10px;
-}
-
-.result h2{
-margin-bottom:10px;
-}
-
-.result p{
-color:#aebdca;
-line-height:1.7;
-}
-
-.result a{
-display:inline-block;
-margin-top:15px;
-color:#00ff88;
-text-decoration:none;
-font-weight:bold;
-}
-
-.empty{
-background:#0d1a2a;
-border:1px solid #1d344b;
-border-radius:16px;
-padding:30px;
-text-align:center;
-color:#aebdca;
-}
-
-footer{
-text-align:center;
-padding:35px;
-background:#050b14;
-margin-top:50px;
-color:#8293a5;
-}
-
-@media(max-width:700px){
-.search{
-width:100%;
-margin:0;
-}
-
-nav{
-width:100%;
-}
-}
-</style>
-
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">⚽ FootZone</div>
-
-<nav>
-<a href="index.html">الرئيسية</a>
-<a href="matches.html">المباريات</a>
-<a href="news.html">الأخبار</a>
-<a href="transfers.html">الانتقالات</a>
-<a href="teams.html">الفرق</a>
-<a href="players.html">اللاعبون</a>
-</nav>
-
-<input id="globalSearch" class="search" placeholder="🔎 ابحث عن لاعب، فريق...">
-
-</header>
-
-<div class="container">
-
-<h1 class="title">
-🔎 نتائج البحث عن:
-<span id="queryText"></span>
-</h1>
-
-<div id="results" class="results"></div>
-
-</div>
-
-<footer>
-© 2026 FootZone
-</footer>
-
-<script src="search.js"></script>
-
-</body>
-</html>
+    }
+);
