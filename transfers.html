@@ -1,623 +1,139 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FootZone | الانتقالات</title>
 
-    <title>FootZone | الانتقالات</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #0b1020;
-            color: white;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        header {
-            background: #11182d;
-            padding: 18px 6%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #26304d;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #00ff88;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #ddd;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #00ff88;
-        }
-
-        .search {
-            background: #18213b;
-            border: 1px solid #2c3758;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
-            outline: none;
-            width: 180px;
-        }
-
-        .hero {
-            padding: 80px 20px;
-            text-align: center;
-            background:
-                linear-gradient(rgba(5,10,25,.7), rgba(5,10,25,.95)),
-                radial-gradient(circle, #17345c, #0b1020 70%);
-        }
-
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 span {
-            color: #00ff88;
-        }
-
-        .hero p {
-            color: #aaa;
-            font-size: 18px;
-        }
-
-        section {
-            padding: 60px 6%;
-        }
-
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .section-title h2 {
-            font-size: 30px;
-        }
-
-        .section-title a {
-            color: #00ff88;
-        }
-
-        .filters {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .filter {
-            background: #18213b;
-            border: 1px solid #2c3758;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 25px;
-            cursor: pointer;
-        }
-
-        .filter.active,
-        .filter:hover {
-            background: #00ff88;
-            color: #07130d;
-        }
-
-        .transfer-list {
-            display: grid;
-            gap: 15px;
-        }
-
-        .transfer {
-            background: #11182d;
-            border: 1px solid #26304d;
-            border-radius: 15px;
-            padding: 22px;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr auto;
-            align-items: center;
-            gap: 20px;
-            transition: 0.3s;
-        }
-
-        .transfer:hover {
-            transform: translateY(-3px);
-            border-color: #00ff88;
-        }
-
-        .player {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .player-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: #18213b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 25px;
-        }
-
-        .player h3 {
-            margin-bottom: 5px;
-        }
-
-        .player p {
-            color: #888;
-            font-size: 14px;
-        }
-
-        .arrow {
-            color: #00ff88;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .club {
-            font-weight: bold;
-        }
-
-        .fee {
-            color: #00ff88;
-            font-weight: bold;
-            background: #102b20;
-            padding: 8px 12px;
-            border-radius: 8px;
-            white-space: nowrap;
-        }
-
-        .date {
-            color: #777;
-            font-size: 13px;
-            margin-top: 5px;
-        }
-
-        footer {
-            background: #070b16;
-            padding: 35px 6%;
-            text-align: center;
-            color: #888;
-            border-top: 1px solid #26304d;
-        }
-
-        footer .logo {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 800px) {
-            header {
-                flex-direction: column;
-            }
-
-            .search {
-                width: 100%;
-            }
-
-            .transfer {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .player {
-                justify-content: center;
-            }
-
-            .arrow {
-                transform: rotate(90deg);
-            }
-
-            .fee {
-                justify-self: center;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            nav {
-                justify-content: center;
-            }
-
-            .section-title {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-start;
-            }
-        }
-    </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0b1020;color:white}
+a{text-decoration:none;color:inherit}
+header{background:#11182d;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:1000;border-bottom:1px solid #26304d}
+.logo{font-size:28px;font-weight:bold;color:#00ff88}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:#ddd}
+nav a:hover{color:#00ff88}
+.search{background:#18213b;border:1px solid #2c3758;color:white;padding:10px 15px;border-radius:10px;outline:none;width:180px}
+.hero{padding:70px 20px;text-align:center;background:radial-gradient(circle,#17345c,#0b1020 70%)}
+.hero h1{font-size:45px;margin-bottom:15px}
+.hero p{color:#aaa}
+section{padding:50px 6%}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:35px}
+.filter{background:#18213b;border:1px solid #2c3758;color:white;padding:10px 18px;border-radius:25px}
+.filter:hover,.active{background:#00ff88;color:#07130d}
+.transfers{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.transfer{background:#11182d;border:1px solid #26304d;border-radius:18px;padding:25px}
+.player{font-size:22px;font-weight:bold;margin-bottom:20px}
+.move{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.club{background:#18213b;padding:15px;border-radius:10px;text-align:center;flex:1}
+.arrow{color:#00ff88;font-size:25px}
+.fee{margin-top:20px;color:#00ff88;font-weight:bold;font-size:18px}
+footer{background:#070b16;padding:35px 6%;text-align:center;color:#888;border-top:1px solid #26304d}
+@media(max-width:900px){.transfers{grid-template-columns:1fr}header{flex-direction:column}.search{width:100%}}
+@media(max-width:600px){.hero h1{font-size:35px}nav{justify-content:center}.move{flex-direction:column}}
+</style>
 </head>
 
 <body>
 
 <header>
 
-    <a href="index.html" class="logo">
-        ⚽ FootZone
-    </a>
+<a href="index.html" class="logo">⚽ FootZone</a>
 
-    <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="matches.html">المباريات</a>
-        <a href="news.html">الأخبار</a>
-        <a href="transfers.html">الانتقالات</a>
-        <a href="#">الفرق</a>
-        <a href="#">اللاعبون</a>
-    </nav>
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="matches.html">المباريات</a>
+<a href="news.html">الأخبار</a>
+<a href="transfers.html">الانتقالات</a>
+<a href="teams.html">الفرق</a>
+<a href="players.html">اللاعبون</a>
+</nav>
 
-    <input
-        class="search"
-        type="text"
-        placeholder="🔎 ابحث..."
-    >
+<input class="search" type="text" placeholder="🔎 ابحث...">
 
 </header>
 
-
 <section class="hero">
-
-    <h1>
-        🔄 <span>سوق الانتقالات</span>
-    </h1>
-
-    <p>
-        تابع أحدث انتقالات وتحركات لاعبي كرة القدم.
-    </p>
-
+<h1>🔄 سوق الانتقالات</h1>
+<p>آخر أخبار وصفقات انتقالات اللاعبين</p>
 </section>
-
 
 <section>
 
-    <div class="section-title">
-
-        <h2>🔥 آخر الانتقالات</h2>
-
-        <a href="index.html">
-            ← الرئيسية
-        </a>
-
-    </div>
-
-
-    <div class="filters">
-
-        <button class="filter active">
-            الكل
-        </button>
-
-        <button class="filter">
-            أوروبا
-        </button>
-
-        <button class="filter">
-            إسبانيا
-        </button>
-
-        <button class="filter">
-            إنجلترا
-        </button>
-
-        <button class="filter">
-            فرنسا
-        </button>
-
-        <button class="filter">
-            إيطاليا
-        </button>
-
-        <button class="filter">
-            ألمانيا
-        </button>
-
-    </div>
-
-
-    <div class="transfer-list">
-
-
-        <div class="transfer">
-
-            <div class="player">
-
-                <div class="player-icon">
-                    👤
-                </div>
-
-                <div>
-                    <h3>
-                        لاعب جديد
-                    </h3>
-
-                    <p>
-                        جناح هجومي
-                    </p>
-
-                    <div class="date">
-                        اليوم
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="club">
-                🔵 النادي السابق
-            </div>
-
-
-            <div class="arrow">
-                →
-            </div>
-
-
-            <div>
-
-                <div class="club">
-                    🔴 النادي الجديد
-                </div>
-
-                <div class="fee">
-                    €50M
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="transfer">
-
-            <div class="player">
-
-                <div class="player-icon">
-                    👤
-                </div>
-
-                <div>
-                    <h3>
-                        لاعب جديد
-                    </h3>
-
-                    <p>
-                        لاعب وسط
-                    </p>
-
-                    <div class="date">
-                        اليوم
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="club">
-                🇫🇷 PSG
-            </div>
-
-
-            <div class="arrow">
-                →
-            </div>
-
-
-            <div>
-
-                <div class="club">
-                    🇪🇸 Barcelona
-                </div>
-
-                <div class="fee">
-                    €75M
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="transfer">
-
-            <div class="player">
-
-                <div class="player-icon">
-                    👤
-                </div>
-
-                <div>
-                    <h3>
-                        لاعب جديد
-                    </h3>
-
-                    <p>
-                        مهاجم
-                    </p>
-
-                    <div class="date">
-                        أمس
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="club">
-                🇬🇧 Liverpool
-            </div>
-
-
-            <div class="arrow">
-                →
-            </div>
-
-
-            <div>
-
-                <div class="club">
-                    🇩🇪 Bayern
-                </div>
-
-                <div class="fee">
-                    €60M
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="transfer">
-
-            <div class="player">
-
-                <div class="player-icon">
-                    👤
-                </div>
-
-                <div>
-                    <h3>
-                        لاعب جديد
-                    </h3>
-
-                    <p>
-                        مدافع
-                    </p>
-
-                    <div class="date">
-                        أمس
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="club">
-                🇮🇹 Inter
-            </div>
-
-
-            <div class="arrow">
-                →
-            </div>
-
-
-            <div>
-
-                <div class="club">
-                    🇬🇧 Chelsea
-                </div>
-
-                <div class="fee">
-                    €45M
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="transfer">
-
-            <div class="player">
-
-                <div class="player-icon">
-                    👤
-                </div>
-
-                <div>
-                    <h3>
-                        لاعب جديد
-                    </h3>
-
-                    <p>
-                        ظهير أيسر
-                    </p>
-
-                    <div class="date">
-                        هذا الأسبوع
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="club">
-                🇪🇸 Real Madrid
-            </div>
-
-
-            <div class="arrow">
-                →
-            </div>
-
-
-            <div>
-
-                <div class="club">
-                    🇫🇷 Marseille
-                </div>
-
-                <div class="fee">
-                    €30M
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
+<div class="filters">
+<button class="filter active">الكل</button>
+<button class="filter">أوروبا</button>
+<button class="filter">إسبانيا</button>
+<button class="filter">إنجلترا</button>
+<button class="filter">فرنسا</button>
+<button class="filter">إيطاليا</button>
+<button class="filter">ألمانيا</button>
+</div>
+
+<div class="transfers">
+
+<div class="transfer">
+<div class="player">⭐ لاعب جديد</div>
+<div class="move">
+<div class="club">النادي السابق</div>
+<div class="arrow">←</div>
+<div class="club">Real Madrid</div>
+</div>
+<div class="fee">€50M</div>
+</div>
+
+<div class="transfer">
+<div class="player">🔥 لاعب جديد</div>
+<div class="move">
+<div class="club">نادي أوروبي</div>
+<div class="arrow">←</div>
+<div class="club">Barcelona</div>
+</div>
+<div class="fee">€75M</div>
+</div>
+
+<div class="transfer">
+<div class="player">⚡ لاعب جديد</div>
+<div class="move">
+<div class="club">نادي فرنسي</div>
+<div class="arrow">←</div>
+<div class="club">Manchester City</div>
+</div>
+<div class="fee">€60M</div>
+</div>
+
+<div class="transfer">
+<div class="player">🎯 لاعب جديد</div>
+<div class="move">
+<div class="club">نادي إيطالي</div>
+<div class="arrow">←</div>
+<div class="club">PSG</div>
+</div>
+<div class="fee">€45M</div>
+</div>
+
+<div class="transfer">
+<div class="player">💪 لاعب جديد</div>
+<div class="move">
+<div class="club">نادي ألماني</div>
+<div class="arrow">←</div>
+<div class="club">Liverpool</div>
+</div>
+<div class="fee">€30M</div>
+</div>
+
+</div>
 
 </section>
 
-
 <footer>
-
-    <div class="logo">
-        ⚽ FootZone
-    </div>
-
-    <p>
-        جميع أخبار كرة القدم في مكان واحد.
-    </p>
-
-    <p style="margin-top:15px;">
-        © 2026 FootZone
-    </p>
-
+<div class="logo">⚽ FootZone</div>
+<p>جميع أخبار كرة القدم في مكان واحد.</p>
+<p style="margin-top:15px">© 2026 FootZone</p>
 </footer>
+
+<script src="search.js"></script>
 
 </body>
 </html>
