@@ -1,637 +1,181 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FootZone | الرئيسية</title>
 
-    <title>FootZone | عالم كرة القدم</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #0b1020;
-            color: white;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        header {
-            background: #11182d;
-            padding: 18px 6%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #26304d;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            color: #00ff88;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: #ddd;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #00ff88;
-        }
-
-        .search {
-            background: #18213b;
-            border: 1px solid #2c3758;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
-            outline: none;
-            width: 180px;
-        }
-
-        .hero {
-            min-height: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 50px 20px;
-            background:
-                linear-gradient(rgba(5,10,25,.75), rgba(5,10,25,.95)),
-                radial-gradient(circle at center, #17345c, #0b1020 70%);
-        }
-
-        .hero h1 {
-            font-size: 55px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: #00ff88;
-        }
-
-        .hero p {
-            color: #bbb;
-            font-size: 20px;
-            max-width: 650px;
-            line-height: 1.8;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .btn {
-            padding: 14px 25px;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #00ff88;
-            color: #07130d;
-        }
-
-        .btn-secondary {
-            background: #1b2745;
-            color: white;
-            border: 1px solid #344363;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            opacity: .9;
-        }
-
-        section {
-            padding: 70px 6%;
-        }
-
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-        }
-
-        .section-title a {
-            color: #00ff88;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .card {
-            background: #11182d;
-            border: 1px solid #26304d;
-            padding: 25px;
-            border-radius: 15px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #00ff88;
-        }
-
-        .card .icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #aaa;
-            line-height: 1.7;
-        }
-
-        .match {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #11182d;
-            border: 1px solid #26304d;
-            padding: 20px;
-            border-radius: 14px;
-            margin-bottom: 15px;
-        }
-
-        .team {
-            font-weight: bold;
-            width: 30%;
-        }
-
-        .score {
-            text-align: center;
-            color: #00ff88;
-            font-weight: bold;
-        }
-
-        .news-card {
-            overflow: hidden;
-        }
-
-        .news-image {
-            height: 150px;
-            background: #18213b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #00ff88;
-            color: #07130d;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .transfer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #11182d;
-            border: 1px solid #26304d;
-            padding: 18px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-        }
-
-        .transfer strong {
-            color: #00ff88;
-        }
-
-        .features {
-            background: #0e1528;
-        }
-
-        footer {
-            background: #070b16;
-            padding: 35px 6%;
-            text-align: center;
-            color: #888;
-            border-top: 1px solid #26304d;
-        }
-
-        footer .logo {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 900px) {
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            header {
-                flex-direction: column;
-            }
-
-            .search {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            nav {
-                justify-content: center;
-            }
-
-            .match,
-            .transfer {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-
-            .team {
-                width: 100%;
-            }
-        }
-    </style>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0b1020;color:white}
+a{text-decoration:none;color:inherit}
+header{background:#11182d;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:1000;border-bottom:1px solid #26304d}
+.logo{font-size:28px;font-weight:bold;color:#00ff88}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:#ddd}
+nav a:hover{color:#00ff88}
+.search{background:#18213b;border:1px solid #2c3758;color:white;padding:10px 15px;border-radius:10px;outline:none;width:180px}
+.hero{padding:100px 20px;text-align:center;background:linear-gradient(rgba(5,10,25,.65),rgba(5,10,25,.95)),radial-gradient(circle,#17345c,#0b1020 70%)}
+.hero h1{font-size:52px;margin-bottom:18px}
+.hero h1 span{color:#00ff88}
+.hero p{color:#aaa;font-size:19px;margin-bottom:30px}
+.btn{display:inline-block;background:#00ff88;color:#07130d;padding:13px 25px;border-radius:10px;font-weight:bold;margin:5px}
+.btn.dark{background:#18213b;color:white}
+section{padding:60px 6%}
+.title{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}
+.title h2{font-size:30px}
+.title a{color:#00ff88}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:#11182d;border:1px solid #26304d;border-radius:16px;padding:25px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:#00ff88}
+.card h3{margin-bottom:12px}
+.card p{color:#aaa;line-height:1.6}
+.match{display:flex;justify-content:space-between;align-items:center}
+.time{color:#00ff88;font-weight:bold}
+.features{background:#0e1528}
+footer{background:#070b16;padding:35px 6%;text-align:center;color:#888;border-top:1px solid #26304d}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}header{flex-direction:column}.search{width:100%}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.hero h1{font-size:38px}nav{justify-content:center}}
+</style>
 </head>
 
 <body>
 
 <header>
 
-    <div class="logo">⚽ FootZone</div>
+<a href="index.html" class="logo">⚽ FootZone</a>
 
-    <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="matches.html">المباريات</a>
-        <a href="news.html">الأخبار</a>
-        <a href="#transfers">الانتقالات</a>
-        <a href="#">الفرق</a>
-        <a href="#">اللاعبون</a>
-    </nav>
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="matches.html">المباريات</a>
+<a href="news.html">الأخبار</a>
+<a href="transfers.html">الانتقالات</a>
+<a href="teams.html">الفرق</a>
+<a href="players.html">اللاعبون</a>
+</nav>
 
-    <input
-        class="search"
-        type="text"
-        placeholder="🔎 ابحث..."
-    >
+<input class="search" type="text" placeholder="🔎 ابحث...">
 
 </header>
 
-
 <section class="hero">
 
-    <h1>
-        مرحباً بك في <span>FootZone</span>
-    </h1>
+<h1>مرحباً بك في <span>FootZone</span> ⚽</h1>
 
-    <p>
-        كل ما تحتاجه عن كرة القدم في مكان واحد:
-        المباريات، الأخبار، الانتقالات واللاعبين.
-    </p>
+<p>كل ما يخص كرة القدم في مكان واحد</p>
 
-    <div class="buttons">
-
-        <a href="matches.html" class="btn btn-primary">
-            ⚽ مباريات اليوم
-        </a>
-
-        <a href="news.html" class="btn btn-secondary">
-            📰 آخر الأخبار
-        </a>
-
-    </div>
+<a href="matches.html" class="btn">⚽ المباريات</a>
+<a href="news.html" class="btn dark">📰 آخر الأخبار</a>
 
 </section>
-
 
 <section>
 
-    <div class="section-title">
+<div class="title">
+<h2>⚽ مباريات اليوم</h2>
+<a href="matches.html">كل المباريات ←</a>
+</div>
 
-        <h2>⚽ مباريات اليوم</h2>
+<div class="grid">
 
-        <a href="matches.html">
-            كل المباريات ←
-        </a>
+<div class="card match">
+<div>
+<h3>Barcelona</h3>
+<p>Real Madrid</p>
+</div>
+<div class="time">20:00</div>
+</div>
 
-    </div>
+<div class="card match">
+<div>
+<h3>PSG</h3>
+<p>Marseille</p>
+</div>
+<div class="time">21:00</div>
+</div>
 
-    <div>
+<div class="card match">
+<div>
+<h3>Man City</h3>
+<p>Arsenal</p>
+</div>
+<div class="time">18:30</div>
+</div>
 
-        <div class="match">
-
-            <div class="team">
-                🇪🇸 Barcelona
-            </div>
-
-            <div class="score">
-                20:00
-            </div>
-
-            <div class="team">
-                Real Madrid 🇪🇸
-            </div>
-
-        </div>
-
-
-        <div class="match">
-
-            <div class="team">
-                🇫🇷 PSG
-            </div>
-
-            <div class="score">
-                21:00
-            </div>
-
-            <div class="team">
-                Marseille 🇫🇷
-            </div>
-
-        </div>
-
-
-        <div class="match">
-
-            <div class="team">
-                🇬🇧 Man City
-            </div>
-
-            <div class="score">
-                18:30
-            </div>
-
-            <div class="team">
-                Arsenal 🇬🇧
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
-
-
-<section id="news">
-
-    <div class="section-title">
-
-        <h2>📰 آخر الأخبار</h2>
-
-        <a href="news.html">
-            كل الأخبار ←
-        </a>
-
-    </div>
-
-
-    <div class="cards">
-
-        <a href="news.html" class="card news-card">
-
-            <div class="news-image">
-                📰
-            </div>
-
-            <span class="tag">كرة القدم</span>
-
-            <h3>
-                أحدث أخبار كرة القدم العالمية
-            </h3>
-
-            <p>
-                تابع آخر الأخبار والتطورات في عالم كرة القدم.
-            </p>
-
-        </a>
-
-
-        <a href="news.html" class="card news-card">
-
-            <div class="news-image">
-                🔥
-            </div>
-
-            <span class="tag">انتقالات</span>
-
-            <h3>
-                آخر أخبار سوق الانتقالات
-            </h3>
-
-            <p>
-                أهم أخبار وتحركات اللاعبين والأندية.
-            </p>
-
-        </a>
-
-
-        <a href="news.html" class="card news-card">
-
-            <div class="news-image">
-                🏆
-            </div>
-
-            <span class="tag">بطولات</span>
-
-            <h3>
-                أخبار البطولات الأوروبية
-            </h3>
-
-            <p>
-                تابع أهم الأحداث في أكبر البطولات.
-            </p>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<section id="transfers">
-
-    <div class="section-title">
-
-        <h2>🔄 آخر الانتقالات</h2>
-
-        <a href="#">
-            كل الانتقالات ←
-        </a>
-
-    </div>
-
-
-    <div>
-
-        <div class="transfer">
-
-            <div>
-                🇪🇸 لاعب جديد
-            </div>
-
-            <strong>
-                → Barcelona
-            </strong>
-
-        </div>
-
-
-        <div class="transfer">
-
-            <div>
-                🇫🇷 لاعب جديد
-            </div>
-
-            <strong>
-                → PSG
-            </strong>
-
-        </div>
-
-
-        <div class="transfer">
-
-            <div>
-                🇬🇧 لاعب جديد
-            </div>
-
-            <strong>
-                → Manchester City
-            </strong>
-
-        </div>
-
-    </div>
-
-</section>
-
 
 <section class="features">
 
-    <div class="section-title">
+<div class="title">
+<h2>📰 آخر الأخبار</h2>
+<a href="news.html">كل الأخبار ←</a>
+</div>
 
-        <h2>🚀 لماذا FootZone؟</h2>
+<div class="grid">
 
-    </div>
+<div class="card">
+<h3>🌍 أخبار كرة القدم العالمية</h3>
+<p>تابع آخر الأخبار والتطورات في عالم كرة القدم.</p>
+</div>
 
+<div class="card">
+<h3>🔄 سوق الانتقالات</h3>
+<p>آخر أخبار الانتقالات والصفقات الجديدة.</p>
+</div>
 
-    <div class="cards">
+<div class="card">
+<h3>⭐ نجوم كرة القدم</h3>
+<p>أخبار ومعلومات عن أشهر لاعبي العالم.</p>
+</div>
 
-        <div class="card">
-
-            <div class="icon">⚽</div>
-
-            <h3>
-                المباريات
-            </h3>
-
-            <p>
-                اكتشف المباريات والنتائج في مكان واحد.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">📰</div>
-
-            <h3>
-                الأخبار
-            </h3>
-
-            <p>
-                تابع أحدث أخبار كرة القدم.
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">🔄</div>
-
-            <h3>
-                الانتقالات
-            </h3>
-
-            <p>
-                تابع أخبار انتقالات اللاعبين.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
+<section>
+
+<div class="title">
+<h2>🔥 استكشف FootZone</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>🏆 الفرق</h3>
+<p>اكتشف أشهر الأندية والفرق.</p>
+<br>
+<a href="teams.html" class="btn">استكشف الفرق</a>
+</div>
+
+<div class="card">
+<h3>👤 اللاعبون</h3>
+<p>تعرف على نجوم كرة القدم.</p>
+<br>
+<a href="players.html" class="btn">استكشف اللاعبين</a>
+</div>
+
+<div class="card">
+<h3>🔄 الانتقالات</h3>
+<p>تابع أخبار سوق الانتقالات.</p>
+<br>
+<a href="transfers.html" class="btn">الانتقالات</a>
+</div>
+
+</div>
+
+</section>
 
 <footer>
 
-    <div class="logo">
-        ⚽ FootZone
-    </div>
-
-    <p>
-        جميع أخبار كرة القدم في مكان واحد.
-    </p>
-
-    <p style="margin-top:15px;">
-        © 2026 FootZone
-    </p>
+<div class="logo">⚽ FootZone</div>
+<p>جميع أخبار كرة القدم في مكان واحد.</p>
+<p style="margin-top:15px">© 2026 FootZone</p>
 
 </footer>
+
+<script src="search.js"></script>
 
 </body>
 </html>
